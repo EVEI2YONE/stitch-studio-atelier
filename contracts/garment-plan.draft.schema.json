@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/stitch-studio/contracts/garment-plan.draft.schema.json",
+  "title": "GarmentPlan vNext DRAFT - non-validated design contract",
+  "description": "Future replacement for v0.3 plan adapter output. DRAFT only. No serializer/validator is implemented.",
+  "type": "object",
+  "required": [
+    "contractVersion",
+    "source",
+    "accuracy",
+    "templateId",
+    "gauge",
+    "measurements",
+    "components"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "draft-0.1"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "legacy-v0.3",
+        "manual",
+        "scan-measurements"
+      ]
+    },
+    "accuracy": {
+      "type": "string",
+      "enum": [
+        "illustrative",
+        "calculated-unverified"
+      ]
+    },
+    "templateId": {
+      "type": "string",
+      "enum": [
+        "custom",
+        "scarf",
+        "blanket",
+        "beanie",
+        "shirt",
+        "sweater",
+        "socks",
+        "gloves"
+      ]
+    },
+    "gauge": {
+      "type": "object",
+      "required": [
+        "stitchesPerCm",
+        "rowsPerCm",
+        "state"
+      ],
+      "properties": {
+        "stitchesPerCm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "rowsPerCm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "state": {
+          "enum": [
+            "blocked-measured",
+            "provisional"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "measurements": {
+      "type": "object",
+      "description": "Use separate body, finished, and flat-panel values in cm, never inferred interchangeably.",
+      "properties": {
+        "bodyCm": {
+          "type": "object"
+        },
+        "finishedCm": {
+          "type": "object"
+        },
+        "panelCm": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "constructionStatus",
+          "sections"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "constructionStatus": {
+            "enum": [
+              "unknown",
+              "illustrative",
+              "calculated-unverified"
+            ]
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "rowStart": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "rowEndExclusive": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "operations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "rowStitchCounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "assembly": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

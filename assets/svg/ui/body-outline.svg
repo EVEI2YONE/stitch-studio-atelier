@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="body-outline UI reference illustration (non-scaled)">
+<title>body-outline UI reference reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M72 29Q85 17 87 9Q100 2 113 9Q115 17 128 29L153 57L169 135L146 141L125 85L120 148H80L75 85L54 141L31 135L47 57Z"/><path d="M100 8v141" fill="none" stroke="#ad654a" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M70 73h60M77 102h46" fill="none" stroke-width="1.6" stroke-dasharray="3 4"/></g>
+</svg>

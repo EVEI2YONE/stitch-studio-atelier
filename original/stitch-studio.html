@@ -1,0 +1,2471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f4ed">
+<title>Stitch Studio | Templates + Gauge Lab</title>
+<style>
+
+:root{--paper:#f8f4ed;--panel:#fffdf8;--ink:#292d25;--muted:#666d63;--line:#e5e3d8;--green:#536b52;--dark:#304a38;--mint:#eef3e9;--rust:#ad654a;--shadow:0 12px 34px rgba(65,53,41,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.45}button,input,select{font:inherit}button,select,input{outline-offset:3px}button{cursor:pointer}.shell{max-width:1140px;margin:auto;padding:0 24px 70px}
+header{border-bottom:1px solid var(--line);background:#fcfaf5}header .inner{max-width:1140px;padding:22px 24px;margin:auto;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:12px;font-family:Georgia,serif;font-size:25px;font-weight:700;letter-spacing:-.6px}.yarn-logo{width:38px;height:38px;background:var(--mint);border-radius:50%;display:grid;place-items:center;color:var(--dark);font-size:22px}.topnote{font-size:12px;letter-spacing:1px;color:var(--muted);font-weight:700}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;padding:40px 0 30px}.eyebrow{font-size:11px;letter-spacing:1.9px;color:var(--rust);font-weight:800;text-transform:uppercase;margin-bottom:9px}h1,h2,h3,p{margin:0}h1{font-family:Georgia,serif;font-weight:700;letter-spacing:-1.2px;font-size:clamp(32px,4vw,48px);line-height:1.11;margin-bottom:12px}h2{font-family:Georgia,serif;font-size:23px;letter-spacing:-.25px}h3{font-size:15px;letter-spacing:-.12px}.sub{color:var(--muted);font-size:15px;max-width:650px}.pill{background:#e9ede4;color:#3a523d;border-radius:50px;padding:9px 13px;font-size:12px;font-weight:750;white-space:nowrap}
+.steps{display:flex;gap:6px;margin-bottom:18px}.step{font-size:12px;background:#f0ede5;border:1px solid var(--line);color:#686a60;border-radius:50px;padding:8px 12px}.step b{display:inline-grid;place-items:center;width:20px;height:20px;background:#dce3d8;border-radius:50%;margin-right:5px;color:#405942}.layout{display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);gap:22px;align-items:start}.column{display:grid;gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.card-head{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:20px}.card-head .subline{color:var(--muted);font-size:12px;margin-top:5px}.tag{font-size:11px;font-weight:700;background:var(--mint);border-radius:60px;color:#4e684f;padding:7px 10px}.fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:block}.field label{font-size:12px;font-weight:750;display:block;margin-bottom:7px;color:#3e493d}.inputwrap{display:flex;align-items:center;border:1px solid #dcded4;background:#fff;border-radius:11px;overflow:hidden;height:46px}.inputwrap input{border:0;padding:0 12px;width:100%;height:100%;min-width:0;background:transparent;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.unit{font-size:11px;color:var(--muted);padding-right:13px;white-space:nowrap}.inputwrap:focus-within{border-color:#67846c;box-shadow:0 0 0 3px #dce8d7}.hint{font-size:12px;color:var(--muted);margin-top:13px}.toggle{display:flex;gap:10px;align-items:center;font-size:13px;font-weight:700;cursor:pointer}.toggle input{accent-color:var(--green);width:18px;height:18px}.relaxed{margin-top:17px;padding-top:17px;border-top:1px solid var(--line)}#afterFields{margin-top:15px}#afterFields[hidden]{display:none}.swatch-help{background:#f0f1e9;border-radius:12px;padding:13px 15px;margin-top:16px;color:#536354;font-size:12px}.horizontal{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.fields-space{margin-top:17px}select{width:100%;height:46px;border:1px solid #dcded4;background:white;border-radius:10px;padding:0 10px;color:var(--ink);font-size:13px;font-weight:650}.colorline{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}.color-pair{display:flex;gap:7px;align-items:center;background:#f6f5ef;border:1px solid #e7e8dd;padding:7px 12px 7px 7px;border-radius:30px}.color-pair input{width:26px;height:26px;border:0;border-radius:50%;padding:0;background:transparent;cursor:pointer}.color-pair span{font-size:12px;font-weight:700}.color-pair[hidden]{display:none}.preview-bg{background:linear-gradient(180deg,#eff3ea 0%,#e7ece3 100%);border-radius:16px;padding:25px 26px 22px;position:relative;min-height:320px}.preview-bg:before{content:'';position:absolute;top:14px;left:15px;width:38px;height:38px;border:1px solid rgba(71,94,63,.13);border-radius:50%}.chart{display:grid;gap:2px;margin:auto;width:min(100%,390px);padding:13px;background:#fffdfa;border:1px solid #e4e6d9;border-radius:12px;box-shadow:0 14px 25px rgba(56,83,66,.07);aspect-ratio:1.75;align-content:stretch}.cell{min-width:0;min-height:0;border-radius:1px}.previewcap{text-align:center;margin-top:12px;color:#50654e;font-size:11px;font-weight:600}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric{border:1px solid var(--line);border-radius:13px;background:#fbfaf5;padding:15px}.metric .k{font-size:11px;color:var(--muted);margin-bottom:4px}.metric .v{font-size:25px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px}.metric .s{font-size:11px;color:var(--muted);margin-top:3px}.status{margin-top:16px;background:#eef3e8;color:#35563a;border-radius:12px;padding:12px 14px;font-size:12px;font-weight:650}.status.warn{background:#fff0e1;color:#845d29}.notes{padding-left:20px;color:#5d665c;font-size:12px;margin:10px 0 0}.notes li{padding-bottom:6px}.primary{background:var(--green);color:white;border:0;border-radius:11px;font-weight:800;padding:13px 18px;width:100%;margin-top:17px}.primary:hover{background:#3d5a43}.ghost{background:white;color:#3e5b41;border:1px solid #cad6c7;border-radius:10px;padding:9px 14px;font-size:12px;font-weight:750}.smallrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.muted{color:var(--muted);font-size:12px}.formula{display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px}.formula div{padding:10px 13px;border:1px dashed #d8ddd3;border-radius:8px;font-size:12px;color:#526354}.error{color:#973e35;background:#fff0ed;border:1px solid #f0c9c4;padding:12px;border-radius:10px;font-weight:650;font-size:13px;margin-bottom:16px}footer{font-size:12px;color:#757970;margin-top:28px;text-align:center}code{background:#f2f0e9;border-radius:3px;padding:1px 4px}
+.view-controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}.view-controls button{background:#f6f5ef;border:1px solid #e7e8dd;border-radius:20px;padding:6px 12px;font-size:12px;font-weight:700;color:#4e684f}.view-controls button.active{background:var(--green);color:white;border-color:var(--green)}
+#threeContainer{width:100%;height:360px;border-radius:12px;overflow:hidden;background:#f0f3ec;position:relative}
+#threeContainer canvas{display:block}
+.timelapse-bar{margin-top:10px;display:flex;align-items:center;gap:10px;font-size:12px}
+.timelapse-bar input[type=range]{flex:1}
+@media(max-width:830px){.layout{grid-template-columns:1fr}.hero{align-items:start;flex-direction:column}.shell{padding:0 16px 55px}.card{padding:19px}.brand{font-size:22px}.topnote{display:none}.steps{overflow:auto;white-space:nowrap}.preview-bg{padding:18px}.chart{padding:8px}}@media(max-width:390px){.fieldgrid{gap:10px}.metric .v{font-size:21px}.colorline{gap:6px}.color-pair{padding-right:8px}}
+
+/* ---- Project templates ---- */
+.template-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+.template-card{
+  appearance:none;
+  background:#fff;
+  border:1px solid #e2e4d8;
+  border-radius:14px;
+  padding:12px 6px 10px;
+  text-align:center;
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  min-height:92px;
+  transition:border-color .15s, background .15s, box-shadow .15s;
+}
+.template-card:hover{
+  border-color:#b7c4b0;
+  background:#fbfcf7;
+}
+.template-card.selected{
+  border-color:var(--green);
+  background:var(--mint);
+  box-shadow:0 0 0 3px #dce8d7;
+  color:var(--dark);
+}
+.template-card svg{
+  width:44px;
+  height:40px;
+  color:#3f5a42;
+  display:block;
+}
+.template-card.selected svg{color:var(--dark)}
+.template-card .t-name{
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:-.1px;
+  line-height:1.2;
+}
+.size-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.size-label{
+  font-size:12px;
+  font-weight:750;
+  color:#3e493d;
+}
+.size-chips{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.size-chip{
+  background:#f6f5ef;
+  border:1px solid #e7e8dd;
+  border-radius:20px;
+  padding:6px 11px;
+  font-size:12px;
+  font-weight:700;
+  color:#4e684f;
+}
+.size-chip.selected{
+  background:var(--green);
+  color:#fff;
+  border-color:var(--green);
+}
+
+/* ---- Preview toolbar & canvas ---- */
+.preview-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 10px;
+}
+.scope-controls{display:flex;gap:6px;flex-wrap:wrap}
+.scope-controls button{
+  background:#f6f5ef;
+  border:1px solid #e7e8dd;
+  border-radius:20px;
+  padding:6px 11px;
+  font-size:12px;
+  font-weight:700;
+  color:#4e684f;
+}
+.scope-controls button.active{
+  background:var(--green);
+  color:#fff;
+  border-color:var(--green);
+}
+.zoom-controls{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.zoom-controls input[type=range]{width:90px}
+.icon-btn{
+  width:32px;
+  height:32px;
+  padding:0;
+  display:grid;
+  place-items:center;
+  font-size:18px;
+  line-height:1;
+}
+.zoom-label{
+  font-size:11px;
+  font-weight:700;
+  color:var(--muted);
+  min-width:36px;
+}
+.preview-stage{
+  background:linear-gradient(180deg,#eff3ea 0%,#e7ece3 100%);
+  border-radius:16px;
+  padding:16px 16px 12px;
+  position:relative;
+  min-height:360px;
+}
+.preview-stage:before{
+  content:'';
+  position:absolute;
+  top:12px;
+  left:13px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(71,94,63,.13);
+  border-radius:50%;
+  pointer-events:none;
+}
+#fabricCanvas{
+  display:block;
+  width:100%;
+  height:420px;
+  border-radius:12px;
+  background:#fffdfa;
+  cursor:grab;
+  position:relative;
+  z-index:1;
+  touch-action:none;
+}
+#fabricCanvas.grabbing{cursor:grabbing}
+.preview-help{
+  text-align:center;
+  margin:8px 0 0;
+  color:#50654e;
+  font-size:11px;
+  font-weight:600;
+}
+.loupe-frame{
+  position:absolute;
+  border:2px solid #fff;
+  box-shadow:0 0 0 1px rgba(48,74,56,.35),0 8px 20px rgba(40,50,40,.18);
+  border-radius:6px;
+  pointer-events:none;
+  z-index:2;
+}
+
+/* ---- Construction plan ---- */
+.plan-table-wrap{overflow:auto;margin-top:4px}
+.plan-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+.plan-table th{
+  text-align:left;
+  font-size:11px;
+  color:var(--muted);
+  font-weight:750;
+  padding:6px 8px 8px 0;
+  border-bottom:1px solid var(--line);
+}
+.plan-table td{
+  padding:9px 8px 9px 0;
+  border-bottom:1px solid #eee9de;
+  vertical-align:top;
+  color:#3e493d;
+}
+.plan-table td.num{
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.plan-table td.notes{color:#5d665c;font-size:11px}
+.plan-stack{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  margin:0 0 16px;
+}
+.plan-band{
+  border-radius:8px;
+  background:#eef3e9;
+  border:1px solid #d5dfd0;
+  padding:8px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:700;
+  color:#3a523d;
+}
+.plan-band span{font-weight:650;color:#5d665c;font-size:11px}
+.plan-band.shaped{background:#f4eee6;border-color:#e4d8c8}
+.ease-note{
+  background:#f0f1e9;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:12px;
+  color:#536354;
+  margin-top:12px;
+}
+
+#garmentExtras[hidden],#extraField[hidden],#easeField[hidden],#sizeRow[hidden],#planCard[hidden]{display:none}
+
+@media(max-width:830px){
+  .template-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  #fabricCanvas{height:340px}
+}
+@media(max-width:520px){
+  .template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .template-card{min-height:86px}
+}
+
+/* Hidden preview surfaces must not take layout space, even with inline display. */
+#chart[hidden],#renderCanvas[hidden],#threeContainer[hidden],#fabricCanvas[hidden],#fabricTools[hidden],#timelapseBar[hidden]{
+  display:none !important;
+}
+.preview-stage:before{display:none}
+#fabricCanvas{height:400px}
+
+
+.loupe-toggle{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#4e684f;cursor:pointer}
+.loupe-toggle input{accent-color:var(--green)}
+.scope-side{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#loupeSize{width:auto;height:32px;padding:0 8px;font-size:12px;font-weight:700}
+#outWidthSub,#outHeightSub,#outRowsSub{font-size:11px;color:var(--muted);margin-top:3px}
+
+</style>
+<body>
+<header><div class="inner"><div class="brand"><span class="yarn-logo" aria-hidden="true">&#129525;</span><span>Stitch Studio</span></div><div class="topnote">MEASURE FIRST. DESIGN WITH CONFIDENCE.</div></div></header>
+<main class="shell">
+  <section class="hero"><div><div class="eyebrow">Prototype / Gauge Lab 0.3 · Templates + Zoom</div><h1>Start with your stitches.</h1><p class="sub">Measure a swatch, pick a project template, and preview the full piece — then zoom into a 5×5 or 10×10 window of the actual stitches.</p></div><span class="pill">No account or upload needed</span></section>
+  <div class="steps" aria-label="Workflow steps"><span class="step"><b>1</b> Measure swatch</span><span class="step"><b>2</b> Pick a project</span><span class="step"><b>3</b> Preview &amp; zoom</span><span class="step"><b>4</b> 3D / Time-lapse</span></div>
+  <div id="error" class="error" role="alert" hidden></div>
+  <div class="layout"><div class="column">
+    <section class="card" aria-labelledby="swatchTitle"><div class="card-head"><div><h2 id="swatchTitle">Your gauge swatch</h2><div class="subline">Use the same yarn, needles and stitch type as your project.</div></div><span class="tag">Step 1</span></div>
+      <div class="fieldgrid">
+        <div class="field"><label for="stitches">Stitches counted</label><div class="inputwrap"><input id="stitches" type="number" min="1" step="1" value="22"><span class="unit">sts</span></div></div>
+        <div class="field"><label for="preWidthCm">Measured width</label><div class="inputwrap"><input id="preWidthCm" type="number" min="0.01" step="0.1" value="10"><span class="unit">cm</span></div></div>
+        <div class="field"><label for="rows">Rows counted</label><div class="inputwrap"><input id="rows" type="number" min="1" step="1" value="28"><span class="unit">rows</span></div></div>
+        <div class="field"><label for="preHeightCm">Measured height</label><div class="inputwrap"><input id="preHeightCm" type="number" min="0.01" step="0.1" value="10"><span class="unit">cm</span></div></div>
+      </div>
+      <div class="relaxed"><label class="toggle"><input id="useRelaxed" type="checkbox" checked> I measured the same swatch after washing / blocking</label>
+        <div id="afterFields" class="fieldgrid"><div class="field"><label for="postWidthCm">Relaxed width</label><div class="inputwrap"><input id="postWidthCm" type="number" min="0.01" step="0.1" value="10.8"><span class="unit">cm</span></div></div><div class="field"><label for="postHeightCm">Relaxed height</label><div class="inputwrap"><input id="postHeightCm" type="number" min="0.01" step="0.1" value="10.6"><span class="unit">cm</span></div></div></div>
+      </div>
+      <div class="swatch-help">Tip: Count stitches and rows in a marked interior area, measure the same area again after the swatch dries, and avoid stretching while measuring. The two measurements must refer to the same stitches.</div>
+      <div class="fieldgrid fields-space"><div class="field"><label for="referenceStsPer10Cm">Reference gauge (optional)</label><div class="inputwrap"><input id="referenceStsPer10Cm" type="number" min="0.01" step="0.1" value="20"><span class="unit">sts / 10 cm</span></div></div><div class="field"><label for="fabric">Swatch fabric</label><select id="fabric"><option value="Stockinette">Stockinette</option><option value="Garter">Garter</option><option value="Ribbing">Ribbing</option></select></div></div>
+    </section>
+
+    <section class="card" aria-labelledby="tmplTitle"><div class="card-head"><div><h2 id="tmplTitle">Project templates</h2><div class="subline">Start from a garment or blanket. Section stitch counts follow your gauge and typical proportions.</div></div><span class="tag">Step 2</span></div>
+      <div class="template-grid" id="templateGrid" role="listbox" aria-label="Project templates"></div>
+      <div class="size-row" id="sizeRow" hidden>
+        <div class="size-label">Size</div>
+        <div class="size-chips" id="sizeChips"></div>
+      </div>
+      <p class="hint" id="templateHint">A flat fabric rectangle using the width and height you set.</p>
+    </section>
+
+    <section class="card" aria-labelledby="sizeTitle"><div class="card-head"><div><h2 id="sizeTitle">Project size</h2><div class="subline" id="sizeSubline">Flat fabric using the width and height you set.</div></div><span class="tag">Size</span></div>
+      <div class="fieldgrid"><div class="field"><label for="targetWidthCm" id="widthLabel">Finished width</label><div class="inputwrap"><input id="targetWidthCm" type="number" min="0.01" step="0.5" value="50"><span class="unit">cm</span></div></div><div class="field"><label for="targetHeightCm" id="heightLabel">Finished height</label><div class="inputwrap"><input id="targetHeightCm" type="number" min="0.01" step="0.5" value="20"><span class="unit">cm</span></div></div>
+        <div class="field"><label for="repeat">Pattern width repeat</label><select id="repeat"><option value="1">1 stitch (no repeat)</option><option value="2">2 stitches</option><option value="4">4 stitches</option><option value="8" selected>8 stitches</option><option value="12">12 stitches</option></select></div>
+        <div class="field"><label for="pattern">Simple pattern</label><select id="pattern"><option value="solid">Solid</option><option value="stripes">Stripes</option><option value="checker">Checker</option><option value="diamond" selected>Geometric diamonds</option></select></div></div>
+      <div class="fieldgrid fields-space" id="garmentExtras" hidden>
+        <div class="field" id="easeField"><label for="easePct">Ease</label><div class="inputwrap"><input id="easePct" type="number" step="1" value="0"><span class="unit">%</span></div></div>
+        <div class="field" id="extraField" hidden><label for="extraCm" id="extraLabel">Sleeve length</label><div class="inputwrap"><input id="extraCm" type="number" min="0.01" step="0.5" value="48"><span class="unit">cm</span></div></div>
+      </div>
+      <p class="hint" id="easeHint" hidden></p>
+      <div class="fieldgrid fields-space"><div class="field"><label for="yarnCount">Yarn colors</label><select id="yarnCount"><option value="1">1 color</option><option value="2">2 colors</option><option value="3" selected>3 colors</option></select></div></div>
+      <div class="colorline"><label class="color-pair" id="colorAWrap"><input id="colorA" aria-label="Yarn A color" type="color" value="#e9d8b8"><span>Yarn A</span></label><label class="color-pair" id="colorBWrap"><input id="colorB" aria-label="Yarn B color" type="color" value="#66734f"><span>Yarn B</span></label><label class="color-pair" id="colorCWrap"><input id="colorC" aria-label="Yarn C color" type="color" value="#ba7657"><span>Yarn C</span></label></div>
+      <p class="hint">The motif is a visual chart preview. Yarn yardage and fit are not guaranteed — treat the plan as a gauge-based starting point.</p>
+    </section>
+  </div>
+  <div class="column">
+    <section class="card" aria-labelledby="previewTitle"><div class="card-head"><div><h2 id="previewTitle">Design preview</h2><div class="subline">Full piece, close-up stitches, rendered fabric, or 3D.</div></div><span class="tag">Step 3–4</span></div>
+      <div class="view-controls">
+        <button type="button" class="active" data-mode="2d">2D Chart</button>
+        <button type="button" data-mode="rendered">Rendered Fabric</button>
+        <button type="button" data-mode="3d">3D Layers</button>
+        <button type="button" data-mode="timelapse">Time-lapse</button>
+      </div>
+      <div class="preview-toolbar" id="fabricTools">
+        <div class="scope-controls" role="group" aria-label="Preview scope">
+          <button type="button" data-scope="5">5×5</button>
+          <button type="button" data-scope="10">10×10</button>
+          <button type="button" data-scope="motif">Motif</button>
+          <button type="button" data-scope="full" class="active">Full piece</button>
+        </div>
+        <div class="scope-side">
+          <div class="zoom-controls">
+            <button type="button" id="zoomOut" class="ghost icon-btn" aria-label="Zoom out">−</button>
+            <input type="range" id="zoomSlider" min="50" max="300" value="100" aria-label="Zoom">
+            <button type="button" id="zoomIn" class="ghost icon-btn" aria-label="Zoom in">+</button>
+            <span id="zoomLabel" class="zoom-label">100%</span>
+          </div>
+          <label class="loupe-toggle"><input type="checkbox" id="showLoupe" checked> Scope</label>
+          <select id="loupeSize" aria-label="Scope size"><option value="5">5×5</option><option value="10" selected>10×10</option></select>
+        </div>
+      </div>
+      <div class="preview-stage" id="previewStage">
+        <canvas id="fabricCanvas" width="800" height="420" aria-label="Knit preview"></canvas>
+        <div id="chart" class="chart" role="img" aria-label="Generated knitting stitch-color chart" hidden></div>
+        <canvas id="renderCanvas" hidden></canvas>
+        <div id="threeContainer" hidden></div>
+        <div class="previewcap" id="previewCap">Full-piece preview</div>
+      </div>
+      <p class="preview-help" id="previewHelp">The full piece is shown first. Hover to move the stitch scope, or switch to 5×5 / 10×10 for a larger close-up.</p>
+      <div class="timelapse-bar" id="timelapseBar" hidden>
+        <span>Progress</span>
+        <input type="range" id="timelapseSlider" min="0" max="100" value="100">
+        <button type="button" id="timelapsePlay" class="ghost">Play</button>
+      </div>
+    </section>
+
+    <section class="card" id="planCard" aria-labelledby="planTitle" hidden><div class="card-head"><div><h2 id="planTitle">Construction plan</h2><div class="subline" id="planSub">Stitch and row counts for each section, from your gauge.</div></div><span class="tag" id="planTag">Template</span></div>
+      <div class="plan-stack" id="planStack"></div>
+      <div class="plan-table-wrap"><table class="plan-table"><thead><tr><th>Section</th><th>Stitches</th><th>Rows</th><th>Size</th><th>Notes</th></tr></thead><tbody id="planBody"></tbody></table></div>
+      <p class="hint" id="planHint"></p>
+    </section>
+
+    <section class="card" aria-labelledby="calcTitle"><div class="card-head"><div><h2 id="calcTitle">Your calculated design</h2><div class="subline" id="modeInfo">Based on washed / blocked gauge.</div></div><span class="tag" id="calcBadge">Live result</span></div>
+      <div class="metrics"><div class="metric"><div class="k">Width stitches</div><div class="v" id="outStitches">--</div><div class="s" id="outRepeats">-- repeats</div></div><div class="metric"><div class="k">Height rows</div><div class="v" id="outRows">--</div><div class="s" id="outRowsSub">At measured row gauge</div></div><div class="metric"><div class="k">Projected relaxed width</div><div class="v" id="outWidth">-- cm</div><div class="s" id="outWidthSub">After repeat rounding</div></div><div class="metric"><div class="k">Projected relaxed height</div><div class="v" id="outHeight">-- cm</div><div class="s" id="outHeightSub">Before shaping or borders</div></div></div>
+      <div id="status" class="status" role="status">Calculating...</div><ul id="notes" class="notes"></ul>
+      <div class="smallrow"><span class="muted" id="referenceInfo">Checking reference gauge</span><button type="button" id="reset" class="ghost">Reset example</button></div>
+      <button id="download" type="button" class="primary">Download project plan</button>
+    </section>
+    <section class="card" aria-labelledby="mathTitle"><div class="card-head"><div><h2 id="mathTitle">How the engine thinks</h2><div class="subline">Transparent formulas, not a black-box prediction.</div></div></div><div class="formula"><div id="formula1">Stitch gauge = stitch count / measured width</div><div id="formula2">Target stitches = finished width x relaxed stitch gauge</div><div id="formula3">Target rows = finished height x relaxed row gauge</div></div></section>
+  </div></div>
+  <footer>Stitch Studio Gauge Lab v0.3 | Project templates, stitch scope &amp; full-piece preview | local browser demo | measurements are user-supplied, plans use typical proportions and are a starting point</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+
+/* Stitch Studio Gauge Engine v0.1. Deterministic, dependency-free core. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  root.StitchCore = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+
+  const round = (n, places = 2) => Number(n.toFixed(places));
+
+  function positive(name, value) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) throw new Error(name + ' must be a positive number.');
+    return n;
+  }
+
+  function positiveCount(name, value) {
+    const n = positive(name, value);
+    if (!Number.isInteger(n)) throw new Error(name + ' must be a whole number.');
+    return n;
+  }
+
+  function nearestMultiple(value, multiple) {
+    const m = positiveCount('Pattern repeat', multiple);
+    return Math.max(m, Math.round(value / m) * m);
+  }
+
+  function calculate(input) {
+    const stitches = positiveCount('Swatch stitches', input.stitches);
+    const rows = positiveCount('Swatch rows', input.rows);
+    const preWidth = positive('Swatch width', input.preWidthCm);
+    const preHeight = positive('Swatch height', input.preHeightCm);
+    const targetWidth = positive('Desired finished width', input.targetWidthCm);
+    const targetHeight = positive('Desired finished height', input.targetHeightCm);
+    const repeat = positiveCount('Pattern repeat', input.repeat ?? 1);
+    if (repeat > 64) throw new Error('Pattern repeat must be 64 stitches or fewer.');
+
+    const hasRelaxed = Boolean(input.useRelaxed);
+    const postWidth = hasRelaxed ? positive('Blocked swatch width', input.postWidthCm) : preWidth;
+    const postHeight = hasRelaxed ? positive('Blocked swatch height', input.postHeightCm) : preHeight;
+    const rawStsCm = stitches / preWidth;
+    const rawRowsCm = rows / preHeight;
+    const finishedStsCm = stitches / postWidth;
+    const finishedRowsCm = rows / postHeight;
+    const baseStitchEstimate = targetWidth * finishedStsCm;
+    const designStitches = nearestMultiple(baseStitchEstimate, repeat);
+    const designRows = Math.max(1, Math.round(targetHeight * finishedRowsCm));
+    const projectedWidth = designStitches / finishedStsCm;
+    const projectedHeight = designRows / finishedRowsCm;
+    const beforeBlockedWidth = designStitches / rawStsCm;
+    const beforeBlockedHeight = designRows / rawRowsCm;
+
+    let comparison = null;
+    if (input.referenceStsPer10Cm !== '' && input.referenceStsPer10Cm !== undefined && input.referenceStsPer10Cm !== null) {
+      const ref = positive('Reference stitch gauge', input.referenceStsPer10Cm);
+      const deltaPct = (finishedStsCm * 10 / ref - 1) * 100;
+      comparison = {
+        referenceStsPer10Cm: round(ref),
+        deltaPct: round(deltaPct, 1),
+        label: deltaPct > 5 ? 'Tighter than reference' : deltaPct < -5 ? 'Looser than reference' : 'Near reference gauge'
+      };
+    }
+
+    const roundingErrorPct = (projectedWidth / targetWidth - 1) * 100;
+    const warnings = [];
+    if (!hasRelaxed) warnings.push('Provisional sizing: blocked/relaxed gauge was not measured. Yarn relaxation is unknown.');
+    if (Math.abs(roundingErrorPct) > 3) warnings.push('Repeat rounding changes finished width by more than 3%. Try a smaller repeat or revise dimensions.');
+    if (comparison) warnings.push('Reference gauge comparison is meaningful only for comparable yarn, needle size, and stitch structure.');
+    if (hasRelaxed && Math.abs((postWidth / preWidth - 1) * 100) > 20) warnings.push('Large measured width change; check swatch measurements before relying on the result.');
+    return {
+      input: { stitches, rows, preWidthCm: preWidth, preHeightCm: preHeight, postWidthCm: postWidth, postHeightCm: postHeight, targetWidthCm: targetWidth, targetHeightCm: targetHeight, repeat, hasRelaxed },
+      gauge: { rawStsPer10Cm: round(rawStsCm * 10, 2), rawRowsPer10Cm: round(rawRowsCm * 10, 2), finishedStsPer10Cm: round(finishedStsCm * 10, 2), finishedRowsPer10Cm: round(finishedRowsCm * 10, 2) },
+      relaxation: { measured: hasRelaxed, widthChangePct: hasRelaxed ? round((postWidth / preWidth - 1) * 100, 2) : null, heightChangePct: hasRelaxed ? round((postHeight / preHeight - 1) * 100, 2) : null },
+      design: { stitches: designStitches, rows: designRows, repeatsAcross: designStitches / repeat, projectedWidthCm: round(projectedWidth, 2), projectedHeightCm: round(projectedHeight, 2), widthBeforeBlockingCm: round(beforeBlockedWidth, 2), heightBeforeBlockingCm: round(beforeBlockedHeight, 2), widthDifferencePct: round(roundingErrorPct, 2) },
+      comparison, warnings, status: hasRelaxed ? 'measured-relaxed' : 'provisional'
+    };
+  }
+
+  function generateChart(options) {
+    const repeat = positiveCount('Pattern repeat', options.repeat ?? 8);
+    const width = positiveCount('Chart width', options.width ?? repeat * 3);
+    const height = positiveCount('Chart height', options.height ?? 16);
+    const count = positiveCount('Yarn count', options.yarnCount ?? 2);
+    if (count > 3) throw new Error('Prototype supports at most three yarn selections.');
+    if (width > 128 || height > 128) throw new Error('Chart preview is limited to 128 x 128.');
+    const variant = options.pattern || 'diamond';
+    if (!['solid', 'stripes', 'checker', 'diamond'].includes(variant)) throw new Error('Unsupported pattern.');
+    return Array.from({ length: height }, (_, y) =>
+      Array.from({ length: width }, (_, x) => {
+        if (count === 1 || variant === 'solid') return 0;
+        if (variant === 'stripes') return Math.floor(y / 3) % count;
+        if (variant === 'checker') return (Math.floor((x % repeat) / Math.max(1, Math.ceil(repeat / 2))) + Math.floor(y / 4)) % count;
+        const center = (repeat - 1) / 2;
+        const dx = Math.abs((x % repeat) - center);
+        const dy = Math.abs((y % repeat) - center);
+        const radius = Math.max(0.5, center - 0.5);
+        const mark = Math.abs(dx + dy - radius) <= 0.6;
+        return mark ? 1 + (Math.floor(y / repeat) % (count - 1)) : 0;
+      })
+    );
+  }
+
+  return { calculate, nearestMultiple, generateChart };
+});
+
+</script>
+<script>
+/* Project templates and construction planner. */
+(function (root) {
+  'use strict';
+
+  function gcd(a, b) {
+    a = Math.abs(Math.round(a));
+    b = Math.abs(Math.round(b));
+    while (b) { const t = a % b; a = b; b = t; }
+    return a || 1;
+  }
+  function lcm(a, b) {
+    return Math.abs(a * b) / gcd(a, b);
+  }
+  function roundTo(n, m) {
+    m = Math.max(1, Math.round(m));
+    return Math.max(m, Math.round(n / m) * m);
+  }
+  function rowsFor(cm, rowsCm) {
+    return Math.max(1, Math.round(Number(cm) * rowsCm));
+  }
+  function cmFor(rows, rowsCm) {
+    return rows / rowsCm;
+  }
+  function round1(n) { return Math.round(n * 10) / 10; }
+  function round2(n) { return Math.round(n * 100) / 100; }
+
+  const ICONS = {
+    custom: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="9" y="10" width="30" height="28" rx="3"/><path d="M9 19.5h30M9 28.5h30M19 10v28M29 10v28" opacity=".45"/></svg>',
+    scarf: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M14 8.5c8 3 12-3 20 1v29c-8-4-12 2-20-1V8.5z"/><path d="M16 38.5l-1.5 4M20 39.2l.2 4M24 38.6l-1 4M18 7.2L16.5 4M22 7l.3-3.5M26 7.6l-1-3.4" opacity=".8"/></svg>',
+    blanket: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="8" y="11" width="32" height="26" rx="2.5"/><rect x="12" y="15" width="24" height="18" rx="1.2" opacity=".55"/><path d="M8 11l3-3h32l-3 3M40 11l3 3v26l-3-3" opacity=".55"/></svg>',
+    beanie: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M10 33.5c0-12 6.2-22 14-22s14 10 14 22"/><path d="M8 35.5h32c0 3.2-5 5-16 5s-16-1.8-16-5z"/><path d="M24 11.5v-3" /></svg>',
+    shirt: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M16.5 14.5L8 18.5v7l8.5-2.2V38.5h15V23.3L40 25.5v-7l-8.5-4L28 16c-1.2 3-6.8 3-8 0l-3.5-1.5z"/></svg>',
+    sweater: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M17 14.5L5 18v9.5l12-2.2V39h14V25.3L43 27.5V18l-12-3.5L27.5 16c-1.1 2.8-6 2.8-7 0L17 14.5z"/></svg>',
+    socks: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M16 7.5h12v16.5c0 1.5 0 4 4.5 7.5 3.2 2.5 10.5 4 10.5 9.5 0 4-5.5 6.5-12.5 6.5-8 0-16-2.5-16-11V7.5z"/><path d="M16 13.5h12" opacity=".6"/></svg>',
+    gloves: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M17 42.5v-12c0-1-1-3.5-4.8-6.2-2.6-1.8-3.7-4-2.5-5.7 1.2-1.6 3.6-1.2 5.3.6V15c0-2 1.4-3.6 3.1-3.6s3.1 1.6 3.1 3.6v5.2c.4-2.2 1.5-5.5 3.2-5.5 1.8 0 2.9 2.6 3.2 5.5V15c0-2 1.4-3.5 3.1-3.5s3 1.5 3 3.5v8.4c.3-1.8 1.3-4 2.9-4 1.8 0 3.1 2.4 3.1 6.2V42.5"/><path d="M17 36.5h21" opacity=".55"/></svg>'
+  };
+
+  const TEMPLATES = {
+    custom: {
+      id: 'custom',
+      name: 'Custom',
+      kind: 'flat',
+      blurb: 'A flat fabric rectangle using the width and height you set. No garment shaping is applied.',
+      easeDefault: 0,
+      defaultSize: null,
+      labels: { width: 'Finished width', height: 'Finished height' },
+      sizes: null
+    },
+    scarf: {
+      id: 'scarf',
+      name: 'Scarf',
+      kind: 'rectangle',
+      blurb: 'A long rectangle. Cast on for the width, then work until you reach the length. A garter or ribbed edge helps it lie flat.',
+      easeDefault: 0,
+      defaultSize: 'standard',
+      labels: { width: 'Finished width', height: 'Finished length' },
+      sizes: {
+        skinny:   { label: 'Skinny',   width: 15, height: 160 },
+        standard: { label: 'Standard', width: 20, height: 170 },
+        wide:     { label: 'Wide',     width: 30, height: 180 },
+        wrap:     { label: 'Wrap',     width: 45, height: 190 }
+      }
+    },
+    blanket: {
+      id: 'blanket',
+      name: 'Blanket',
+      kind: 'rectangle',
+      blurb: 'A large rectangle. The plan reserves a border so the patterned field and frame stay in proportion.',
+      easeDefault: 0,
+      defaultSize: 'throw',
+      labels: { width: 'Finished width', height: 'Finished length' },
+      sizes: {
+        baby:  { label: 'Baby',  width: 75,  height: 90,  border: 5 },
+        crib:  { label: 'Crib',  width: 90,  height: 115, border: 5 },
+        throw: { label: 'Throw', width: 120, height: 150, border: 6 },
+        twin:  { label: 'Twin',  width: 150, height: 200, border: 8 },
+        queen: { label: 'Queen', width: 220, height: 230, border: 8 }
+      }
+    },
+    beanie: {
+      id: 'beanie',
+      name: 'Beanie',
+      kind: 'hat',
+      blurb: 'Worked in the round from the brim up. Hats are usually knit smaller than the head (negative ease) so they stay on.',
+      easeDefault: -10,
+      defaultSize: 'adultM',
+      labels: { width: 'Head circumference', height: 'Hat height' },
+      easeHelp: 'Negative ease knits the hat smaller than the head measurement so it stays put. −10% is a typical starting point.',
+      sizes: {
+        baby:    { label: 'Baby',    width: 40, height: 16 },
+        toddler: { label: 'Toddler', width: 48, height: 18 },
+        child:   { label: 'Child',   width: 52, height: 20 },
+        adultS:  { label: 'Adult S', width: 54, height: 21 },
+        adultM:  { label: 'Adult M', width: 56, height: 22 },
+        adultL:  { label: 'Adult L', width: 58, height: 23 }
+      }
+    },
+    shirt: {
+      id: 'shirt',
+      name: 'Shirt',
+      kind: 'top',
+      sleeve: 'short',
+      blurb: 'A short-sleeve drop-shoulder knit shirt. The body can be worked in the round to the armholes, then split for front and back.',
+      easeDefault: 8,
+      defaultSize: 'adultM',
+      labels: { width: 'Chest circumference', height: 'Body length', extra: 'Sleeve length' },
+      easeHelp: 'Positive ease adds room over the body chest measurement. +8% is a light everyday ease; use less for a closer fit.',
+      sizes: {
+        child:  { label: 'Child',   width: 68,  height: 44, extra: 14, upperArm: 25, ease: 8 },
+        adultS: { label: 'Adult S', width: 91,  height: 61, extra: 18, upperArm: 32, ease: 8 },
+        adultM: { label: 'Adult M', width: 101, height: 66, extra: 20, upperArm: 35, ease: 8 },
+        adultL: { label: 'Adult L', width: 111, height: 69, extra: 21, upperArm: 39, ease: 9 },
+        adultXL:{ label: 'Adult XL',width: 122, height: 71, extra: 22, upperArm: 43, ease: 9 }
+      }
+    },
+    sweater: {
+      id: 'sweater',
+      name: 'Sweater',
+      kind: 'top',
+      sleeve: 'long',
+      blurb: 'A drop-shoulder pullover. Body is planned in the round to the armholes; sleeves are worked separately and seamed or picked up.',
+      easeDefault: 8,
+      defaultSize: 'adultM',
+      labels: { width: 'Chest circumference', height: 'Body length', extra: 'Sleeve length' },
+      easeHelp: 'Positive ease adds room over the body chest measurement. +8% is a classic pullover ease.',
+      sizes: {
+        child:  { label: 'Child',   width: 68,  height: 46, extra: 35, upperArm: 26, ease: 8 },
+        adultS: { label: 'Adult S', width: 91,  height: 62, extra: 45, upperArm: 33, ease: 8 },
+        adultM: { label: 'Adult M', width: 101, height: 66, extra: 48, upperArm: 36, ease: 8 },
+        adultL: { label: 'Adult L', width: 111, height: 69, extra: 50, upperArm: 40, ease: 9 },
+        adultXL:{ label: 'Adult XL',width: 122, height: 72, extra: 51, upperArm: 44, ease: 9 }
+      }
+    },
+    socks: {
+      id: 'socks',
+      name: 'Socks',
+      kind: 'sock',
+      blurb: 'A cuff-down sock with a heel flap, gusset, and wedge toe. Socks are knit with negative ease so they cling to the foot.',
+      easeDefault: -10,
+      defaultSize: 'adultM',
+      labels: { width: 'Foot circumference', height: 'Foot length', extra: 'Leg height' },
+      easeHelp: 'Negative ease knits the sock smaller than the foot circumference so it stays up. −10% is a typical starting point.',
+      sizes: {
+        toddler: { label: 'Toddler', width: 15, height: 13, extra: 10 },
+        child:   { label: 'Child',   width: 18, height: 18, extra: 13 },
+        adultS:  { label: 'Adult S', width: 21, height: 23, extra: 15 },
+        adultM:  { label: 'Adult M', width: 23, height: 25, extra: 16 },
+        adultL:  { label: 'Adult L', width: 25, height: 27, extra: 17 },
+        adultXL: { label: 'Adult XL',width: 27, height: 29, extra: 18 }
+      }
+    },
+    gloves: {
+      id: 'gloves',
+      name: 'Gloves',
+      kind: 'glove',
+      blurb: 'Worked in the round from the cuff, with a thumb gusset and a simple four-finger split. Finger stitch counts are a starting split you can adjust on the hand.',
+      easeDefault: -6,
+      defaultSize: 'adultM',
+      labels: { width: 'Hand circumference', height: 'Hand length', extra: 'Cuff height' },
+      easeHelp: 'A little negative ease helps gloves stay on without feeling tight. −6% is a gentle starting point.',
+      sizes: {
+        child:  { label: 'Child',   width: 16,   height: 14,   extra: 5,   palm: 8,   fingers: 6 },
+        adultS: { label: 'Adult S', width: 18,   height: 16.5, extra: 6,   palm: 9.5, fingers: 7 },
+        adultM: { label: 'Adult M', width: 20,   height: 19,   extra: 7,   palm: 11,  fingers: 8 },
+        adultL: { label: 'Adult L', width: 22.5, height: 20.5, extra: 7.5, palm: 12,  fingers: 8.5 }
+      }
+    }
+  };
+
+  const ORDER = ['custom', 'scarf', 'blanket', 'beanie', 'shirt', 'sweater', 'socks', 'gloves'];
+
+  function buildPlan(templateId, sizeId, gauge, dims) {
+    const tmpl = TEMPLATES[templateId] || TEMPLATES.custom;
+    const stsCm = gauge.stsCm;
+    const rowsCm = gauge.rowsCm;
+    const repeat = Math.max(1, Math.round(dims.repeat || 1));
+    const easePct = Number(dims.easePct);
+    const ease = (Number.isFinite(easePct) ? easePct : (tmpl.easeDefault || 0)) / 100;
+    const size = (tmpl.sizes && tmpl.sizes[sizeId]) || null;
+
+    const base = {
+      templateId: tmpl.id,
+      templateName: tmpl.name,
+      kind: tmpl.kind,
+      sizeId: sizeId || null,
+      sizeLabel: size ? size.label : (tmpl.id === 'custom' ? 'Custom' : 'Customized'),
+      easePct: (Number.isFinite(easePct) ? easePct : (tmpl.easeDefault || 0)),
+      pieces: [],
+      notes: [],
+      disclaimer: 'This is a gauge-based starting plan with typical proportions, not a tested, sized knitting pattern. Adjust at the needles for your yarn and fit.'
+    };
+
+    function sts(widthCm, multiple) {
+      return roundTo(widthCm * stsCm, multiple);
+    }
+
+    if (tmpl.kind === 'flat' || tmpl.kind === 'rectangle') {
+      const w = Number(dims.width);
+      const h = Number(dims.height);
+      const multiple = repeat;
+      const stitches = sts(w, multiple);
+      const rows = rowsFor(h, rowsCm);
+      const projW = stitches / stsCm;
+      const projH = rows / rowsCm;
+      const pieces = [{
+        id: 'body',
+        name: tmpl.kind === 'flat' ? 'Fabric' : tmpl.name,
+        stitches,
+        rows,
+        widthCm: round2(projW),
+        heightCm: round2(projH),
+        notes: 'Worked flat as a single rectangle. Cast on the stitches, work the rows, bind off.'
+      }];
+      if (tmpl.id === 'blanket') {
+        const borderCm = (size && size.border) || 6;
+        const borderSts = Math.max(repeat, Math.round(borderCm * stsCm));
+        const borderRows = rowsFor(borderCm, rowsCm);
+        const fieldSts = Math.max(repeat, stitches - 2 * borderSts);
+        const fieldRows = Math.max(1, rows - 2 * borderRows);
+        pieces.length = 0;
+        pieces.push({
+          id: 'border',
+          name: 'Border',
+          stitches,
+          rows: borderRows,
+          widthCm: round2(projW),
+          heightCm: round2(borderRows / rowsCm),
+          notes: 'Work this many rows at the start and end, and this many stitches at each side, in a firm edge stitch such as garter or seed.'
+        });
+        pieces.push({
+          id: 'field',
+          name: 'Patterned field',
+          stitches: fieldSts,
+          rows: fieldRows,
+          widthCm: round2(fieldSts / stsCm),
+          heightCm: round2(fieldRows / rowsCm),
+          notes: 'Interior area for your motif, after the border is reserved on all four sides.'
+        });
+        pieces.push({
+          id: 'total',
+          name: 'Total blanket',
+          stitches,
+          rows,
+          widthCm: round2(projW),
+          heightCm: round2(projH),
+          notes: 'Cast on the total stitches, including both side borders.'
+        });
+        base.notes.push('Border is about ' + borderCm + ' cm on each side, reserved from the overall size.');
+      }
+      if (tmpl.id === 'scarf') {
+        base.notes.push('For a tidy edge, slip the first stitch of every row or work 2–3 edge stitches in garter.');
+      }
+      base.pieces = pieces;
+      base.mainStitches = stitches;
+      base.mainRows = rows;
+      base.finishedWidthCm = round2(projW);
+      base.finishedHeightCm = round2(projH);
+      base.knitWidthCm = round2(projW);
+      base.summary = stitches + ' stitches × ' + rows + ' rows, about ' + round1(projW) + ' × ' + round1(projH) + ' cm.';
+      return base;
+    }
+
+    if (tmpl.kind === 'hat') {
+      const head = Number(dims.width);
+      const height = Number(dims.height);
+      const knitCirc = head * (1 + ease);
+      const multiple = lcm(repeat, 4); // 2×2 rib
+      const stitches = sts(knitCirc, multiple);
+      const actualCirc = stitches / stsCm;
+      const brimCm = Math.min(6, Math.max(3.5, height * 0.27));
+      // Crown: prefer 8 decrease sections. If every-other-round is taller than
+      // about 30% of the hat, decrease every round so the body keeps enough height.
+      const idealCrownCm = Math.min(6.5, Math.max(4, height * 0.28));
+      const everyOtherRows = Math.max(4, Math.round(stitches / 8) * 2);
+      const everyRoundRows = Math.max(4, Math.round(stitches / 8));
+      let crownRows, crownHow;
+      if (everyOtherRows / rowsCm <= idealCrownCm + 1.2) {
+        crownRows = everyOtherRows;
+        crownHow = 'Alternate a decrease round with a plain round';
+      } else if (everyRoundRows / rowsCm <= Math.max(idealCrownCm, height * 0.36)) {
+        crownRows = everyRoundRows;
+        crownHow = 'Decrease every round (faster, so the hat height stays on target)';
+      } else {
+        crownRows = rowsFor(idealCrownCm, rowsCm);
+        crownHow = 'Decrease more often than every other round so the crown fits the remaining height';
+      }
+      const crownCm = crownRows / rowsCm;
+      const bodyCm = Math.max(2, height - brimCm - crownCm);
+      const brimRows = rowsFor(brimCm, rowsCm);
+      const bodyRows = rowsFor(bodyCm, rowsCm);
+      const totalRows = brimRows + bodyRows + crownRows;
+      base.pieces = [
+        {
+          id: 'brim',
+          name: 'Brim (ribbing)',
+          stitches,
+          rows: brimRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(brimRows / rowsCm),
+          notes: 'Cast on in the round, multiple of 4 for 2×2 rib. Work about ' + round1(brimCm) + ' cm.'
+        },
+        {
+          id: 'body',
+          name: 'Body',
+          stitches,
+          rows: bodyRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(bodyRows / rowsCm),
+          notes: 'Switch to your main stitch and work even.'
+        },
+        {
+          id: 'crown',
+          name: 'Crown decreases',
+          stitches,
+          rows: crownRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(crownCm),
+          shaped: true,
+          notes: 'Place 8 markers. *Knit to 2 before marker, k2tog; repeat around. ' + crownHow + ' until 8 stitches remain, then draw tight.'
+        }
+      ];
+      base.mainStitches = stitches;
+      base.mainRows = totalRows;
+      base.finishedWidthCm = head;
+      base.finishedHeightCm = round2(totalRows / rowsCm);
+      base.knitWidthCm = round2(actualCirc);
+      base.notes.push('Head is ' + round1(head) + ' cm. With ' + Math.round(ease * 100) + '% ease, the hat is knit at ' + round1(actualCirc) + ' cm (' + stitches + ' stitches).');
+      base.notes.push('Crown height is set by the decrease math (' + crownRows + ' rows for 8 sections), then the body fills the rest of the hat height.');
+      base.summary = 'Cast on ' + stitches + ' stitches. ' + brimRows + ' brim rows, ' + bodyRows + ' body rows, ' + crownRows + ' crown rows.';
+      return base;
+    }
+
+    if (tmpl.kind === 'top') {
+      const chest = Number(dims.width);
+      const length = Number(dims.height);
+      const sleeveLen = Number(dims.extra);
+      const longSleeve = tmpl.sleeve === 'long';
+      const finishedChest = chest * (1 + ease);
+      const multiple = lcm(repeat, 2);
+      let bodySts = sts(finishedChest, multiple);
+      if (bodySts % 2) bodySts += 1;
+      const frontSts = bodySts / 2;
+      const actualChest = bodySts / stsCm;
+      const hemCm = Math.min(longSleeve ? 7 : 5, Math.max(3.5, length * 0.09));
+      const armholeCm = Math.min(24, Math.max(12, length * (longSleeve ? 0.32 : 0.30)));
+      const lowerCm = Math.max(4, length - hemCm - armholeCm);
+      const hemRows = rowsFor(hemCm, rowsCm);
+      const lowerRows = rowsFor(lowerCm, rowsCm);
+      const armholeRows = rowsFor(armholeCm, rowsCm);
+      const bodyRows = hemRows + lowerRows + armholeRows;
+      const neckCm = Math.max(14, Math.min(24, actualChest * 0.18));
+      const neckDepthCm = longSleeve ? 7 : 6;
+      const neckSts = roundTo(neckCm * stsCm, 2);
+      const upperArm = (size && size.upperArm) ? size.upperArm * (1 + Math.max(0, ease) * 0.5) : actualChest * 0.33;
+      let sleeveSts = sts(upperArm, multiple);
+      if (sleeveSts % 2) sleeveSts += 1;
+      const cuffCm = longSleeve ? 5.5 : 3;
+      const cuffCirc = upperArm * (longSleeve ? 0.60 : 0.88);
+      const cuffMultiple = lcm(repeat, 4);
+      const cuffSts = sts(cuffCirc, cuffMultiple);
+      const sleeveRows = rowsFor(sleeveLen, rowsCm);
+      const cuffRows = rowsFor(cuffCm, rowsCm);
+      const sleeveBodyRows = Math.max(1, sleeveRows - cuffRows);
+      const neckbandRows = rowsFor(3, rowsCm);
+      const pickupNeck = roundTo((neckCm + 2 * neckDepthCm) * stsCm, cuffMultiple);
+
+      base.pieces = [
+        {
+          id: 'body',
+          name: 'Body, in the round (to armholes)',
+          stitches: bodySts,
+          rows: hemRows + lowerRows,
+          widthCm: round2(actualChest),
+          heightCm: round2((hemRows + lowerRows) / rowsCm),
+          notes: 'Cast on in the round. ' + hemRows + ' rows of ribbing, then main stitch to the armholes. Split for front and back.'
+        },
+        {
+          id: 'front',
+          name: 'Front (armhole to shoulder)',
+          stitches: frontSts,
+          rows: armholeRows,
+          widthCm: round2(frontSts / stsCm),
+          heightCm: round2(armholeCm),
+          shaped: true,
+          notes: 'Work flat. Shape a crew neck in the last ' + rowsFor(neckDepthCm, rowsCm) + ' rows, about ' + neckSts + ' stitches wide (' + round1(neckCm) + ' cm).'
+        },
+        {
+          id: 'back',
+          name: 'Back (armhole to shoulder)',
+          stitches: frontSts,
+          rows: armholeRows,
+          widthCm: round2(frontSts / stsCm),
+          heightCm: round2(armholeCm),
+          notes: 'Work flat, same length as the front. A shallower neck (2–3 cm) is enough on the back.'
+        },
+        {
+          id: 'sleeve',
+          name: 'Sleeve (make 2)',
+          stitches: sleeveSts,
+          rows: sleeveRows,
+          widthCm: round2(sleeveSts / stsCm),
+          heightCm: round2(sleeveLen),
+          shaped: true,
+          notes: 'Cast on ' + cuffSts + ' stitches for a ' + round1(cuffCirc) + ' cm cuff, work ' + cuffRows + ' rows of ribbing, then increase evenly to ' + sleeveSts + ' stitches and work to ' + round1(sleeveLen) + ' cm.'
+        },
+        {
+          id: 'neckband',
+          name: 'Neckband',
+          stitches: pickupNeck,
+          rows: neckbandRows,
+          widthCm: round2(pickupNeck / stsCm),
+          heightCm: round2(3),
+          notes: 'Pick up about ' + pickupNeck + ' stitches around the neck opening (multiple of 4) and work ' + neckbandRows + ' rows of ribbing.'
+        }
+      ];
+      base.mainStitches = bodySts;
+      base.mainRows = bodyRows;
+      base.finishedWidthCm = chest;
+      base.finishedHeightCm = round2(bodyRows / rowsCm);
+      base.knitWidthCm = round2(actualChest);
+      base.sleeveStitches = sleeveSts;
+      base.sleeveRows = sleeveRows;
+      base.notes.push('Body chest is ' + round1(chest) + ' cm. With ' + Math.round(ease * 100) + '% ease, finished circumference is ' + round1(actualChest) + ' cm (' + bodySts + ' stitches in the round, ' + frontSts + ' per side if seamed).');
+      base.notes.push('Drop-shoulder construction: the sleeve is a straight-ish tube joined at a ' + round1(armholeCm) + ' cm armhole. This is a simpler starting shape than a set-in sleeve.');
+      base.summary = 'Body ' + bodySts + ' stitches × ' + bodyRows + ' rows. Sleeves ' + sleeveSts + ' stitches × ' + sleeveRows + ' rows (make 2).';
+      return base;
+    }
+
+    if (tmpl.kind === 'sock') {
+      const footCirc = Number(dims.width);
+      const footLen = Number(dims.height);
+      const legH = Number(dims.extra);
+      const knitCirc = footCirc * (1 + ease);
+      const multiple = lcm(repeat, 4);
+      const stitches = sts(knitCirc, multiple);
+      const actualCirc = stitches / stsCm;
+      const cuffCm = Math.min(6, Math.max(3.5, legH * 0.32));
+      const legBodyCm = Math.max(2, legH - cuffCm);
+      const cuffRows = rowsFor(cuffCm, rowsCm);
+      const legRows = rowsFor(legBodyCm, rowsCm);
+      let heelSts = Math.round(stitches / 2);
+      if (heelSts % 2) heelSts += 1;
+      const heelRows = heelSts;
+      const heelCm = heelRows / rowsCm;
+      const toeCm = Math.max(3.5, Math.min(5.5, footLen * 0.18));
+      // Foot length includes heel turn depth and toe. Insted length ≈ foot − heel diag − toe
+      const instepCm = Math.max(3, footLen - toeCm - heelCm * 0.45);
+      const instepRows = rowsFor(instepCm, rowsCm);
+      const toeRows = Math.max(6, Math.round(stitches / 4));
+      const actualToeCm = toeRows / rowsCm;
+      const pickupEach = Math.round(heelRows / 2);
+      base.pieces = [
+        {
+          id: 'cuff',
+          name: 'Cuff (ribbing)',
+          stitches,
+          rows: cuffRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(cuffRows / rowsCm),
+          notes: 'Cast on in the round, multiple of 4 for 2×2 rib.'
+        },
+        {
+          id: 'leg',
+          name: 'Leg',
+          stitches,
+          rows: legRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(legRows / rowsCm),
+          notes: 'Work even in your main stitch down to the heel.'
+        },
+        {
+          id: 'heel',
+          name: 'Heel flap & turn',
+          stitches: heelSts,
+          rows: heelRows,
+          widthCm: round2(heelSts / stsCm),
+          heightCm: round2(heelCm),
+          shaped: true,
+          notes: 'Work the flap back and forth on ' + heelSts + ' stitches (half the sock) for ' + heelRows + ' rows, then turn the heel with short rows.'
+        },
+        {
+          id: 'gusset',
+          name: 'Gusset',
+          stitches,
+          rows: pickupEach,
+          widthCm: round2(actualCirc),
+          heightCm: round2(pickupEach / rowsCm),
+          shaped: true,
+          notes: 'Pick up about ' + pickupEach + ' stitches along each side of the flap. Decrease back to ' + stitches + ' stitches for the foot.'
+        },
+        {
+          id: 'foot',
+          name: 'Foot',
+          stitches,
+          rows: instepRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(instepCm),
+          notes: 'Work even until the foot, measured from the back of the heel, is about ' + round1(footLen - toeCm) + ' cm — leaving ' + round1(toeCm) + ' cm for the toe.'
+        },
+        {
+          id: 'toe',
+          name: 'Toe',
+          stitches,
+          rows: toeRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(actualToeCm),
+          shaped: true,
+          notes: 'A wedge toe: decrease 4 stitches every other round (2 each side) until about 8–12 stitches remain, then graft.'
+        }
+      ];
+      const totalRows = cuffRows + legRows + heelRows + pickupEach + instepRows + toeRows;
+      base.mainStitches = stitches;
+      base.mainRows = totalRows;
+      base.finishedWidthCm = footCirc;
+      base.finishedHeightCm = footLen;
+      base.knitWidthCm = round2(actualCirc);
+      base.notes.push('Foot is ' + round1(footCirc) + ' cm around and ' + round1(footLen) + ' cm long. With ' + Math.round(ease * 100) + '% ease, the sock is knit at ' + round1(actualCirc) + ' cm.');
+      base.notes.push('Heel flap uses half the stitches and about as many rows as heel stitches — a standard flap-and-gusset proportion.');
+      base.summary = 'Cast on ' + stitches + ' stitches. Leg ' + (cuffRows + legRows) + ' rows, then heel, gusset, foot, and toe.';
+      return base;
+    }
+
+    if (tmpl.kind === 'glove') {
+      const handCirc = Number(dims.width);
+      const handLen = Number(dims.height);
+      const cuffCm = Number(dims.extra);
+      const knitCirc = handCirc * (1 + ease);
+      const multiple = lcm(repeat, 4);
+      const stitches = sts(knitCirc, multiple);
+      const actualCirc = stitches / stsCm;
+      const palmCm = (size && size.palm) ? size.palm : handLen * 0.55;
+      const fingerCm = (size && size.fingers) ? size.fingers : handLen - palmCm;
+      const cuffRows = rowsFor(cuffCm, rowsCm);
+      const palmRows = rowsFor(palmCm, rowsCm);
+      // Thumb gusset: increase to about 1/3 of palm stitches, over roughly 40% of the palm
+      const thumbSts = Math.max(8, roundTo(stitches / 3.2, 2));
+      const gussetRows = Math.max(6, Math.round(palmRows * 0.45));
+      const palmAfter = Math.max(4, palmRows - gussetRows);
+      // Finger split: remaining stitches after setting aside thumb. Include 2 extra picked-up sts between fingers (approx).
+      const handSts = stitches;
+      const leftover = handSts; // thumb already extra from gusset
+      // Proportions of palm stitches: index 22%, middle 24%, ring 22%, pinky 18%, rest in between
+      const indexSts = Math.max(6, roundTo(handSts * 0.22, 2));
+      const middleSts = Math.max(6, roundTo(handSts * 0.24, 2));
+      const ringSts = Math.max(6, roundTo(handSts * 0.22, 2));
+      const pinkySts = Math.max(6, roundTo(handSts * 0.18, 2));
+      const indexRows = rowsFor(fingerCm * 0.92, rowsCm);
+      const middleRows = rowsFor(fingerCm, rowsCm);
+      const ringRows = rowsFor(fingerCm * 0.95, rowsCm);
+      const pinkyRows = rowsFor(fingerCm * 0.78, rowsCm);
+      const thumbRows = rowsFor(fingerCm * 0.85, rowsCm);
+      const totalRows = cuffRows + palmRows + middleRows;
+      base.pieces = [
+        {
+          id: 'cuff',
+          name: 'Cuff (ribbing)',
+          stitches,
+          rows: cuffRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(cuffRows / rowsCm),
+          notes: 'Cast on in the round, multiple of 4 for 2×2 rib.'
+        },
+        {
+          id: 'gusset',
+          name: 'Palm & thumb gusset',
+          stitches,
+          rows: gussetRows,
+          widthCm: round2(actualCirc),
+          heightCm: round2(gussetRows / rowsCm),
+          shaped: true,
+          notes: 'Increase a thumb gusset until you have about ' + thumbSts + ' thumb stitches, then place them on hold.'
+        },
+        {
+          id: 'palm',
+          name: 'Palm (after gusset)',
+          stitches,
+          rows: palmAfter,
+          widthCm: round2(actualCirc),
+          heightCm: round2(palmAfter / rowsCm),
+          notes: 'Work even to the base of the fingers, about ' + round1(palmCm) + ' cm from the cuff top.'
+        },
+        {
+          id: 'index',
+          name: 'Index finger',
+          stitches: indexSts,
+          rows: indexRows,
+          widthCm: round2(indexSts / stsCm),
+          heightCm: round2(indexRows / rowsCm),
+          notes: 'Starting split — adjust at the hand. Work ' + indexRows + ' rows, then taper and close.'
+        },
+        {
+          id: 'middle',
+          name: 'Middle finger',
+          stitches: middleSts,
+          rows: middleRows,
+          widthCm: round2(middleSts / stsCm),
+          heightCm: round2(middleRows / rowsCm),
+          notes: 'Usually the longest finger. Starting split of ' + middleSts + ' stitches.'
+        },
+        {
+          id: 'ring',
+          name: 'Ring finger',
+          stitches: ringSts,
+          rows: ringRows,
+          widthCm: round2(ringSts / stsCm),
+          heightCm: round2(ringRows / rowsCm),
+          notes: 'Starting split of ' + ringSts + ' stitches.'
+        },
+        {
+          id: 'pinky',
+          name: 'Pinky finger',
+          stitches: pinkySts,
+          rows: pinkyRows,
+          widthCm: round2(pinkySts / stsCm),
+          heightCm: round2(pinkyRows / rowsCm),
+          notes: 'Usually the shortest. Starting split of ' + pinkySts + ' stitches.'
+        },
+        {
+          id: 'thumb',
+          name: 'Thumb',
+          stitches: thumbSts,
+          rows: thumbRows,
+          widthCm: round2(thumbSts / stsCm),
+          heightCm: round2(thumbRows / rowsCm),
+          notes: 'Return the held gusset stitches, pick up a few at the join, and work ' + thumbRows + ' rows.'
+        }
+      ];
+      base.mainStitches = stitches;
+      base.mainRows = totalRows;
+      base.finishedWidthCm = handCirc;
+      base.finishedHeightCm = handLen;
+      base.knitWidthCm = round2(actualCirc);
+      base.notes.push('Hand is ' + round1(handCirc) + ' cm around. With ' + Math.round(ease * 100) + '% ease, the glove is knit at ' + round1(actualCirc) + ' cm (' + stitches + ' stitches).');
+      base.notes.push('Finger stitch counts are a relative split of the palm, not a fitted pattern. Try the glove on before closing each finger and move 1–2 stitches if needed.');
+      base.summary = 'Cast on ' + stitches + ' stitches. Cuff ' + cuffRows + ' rows, palm ' + palmRows + ' rows, then finger and thumb splits.';
+      return base;
+    }
+
+    return base;
+  }
+
+  root.KnitTemplates = { TEMPLATES, ICONS, ORDER, buildPlan, lcm, roundTo, rowsFor };
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+/* Fabric preview renderer: scopes, garment silhouettes, and knit-stitch drawing. */
+(function (root) {
+  'use strict';
+
+  function parseHex(hex) {
+    if (!hex) return { r: 180, g: 180, b: 180 };
+    let h = String(hex).replace('#', '').trim();
+    if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    const n = parseInt(h, 16);
+    if (!Number.isFinite(n)) return { r: 180, g: 180, b: 180 };
+    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  }
+  function css(c, a) {
+    if (a === undefined || a >= 1) return 'rgb(' + (c.r|0) + ',' + (c.g|0) + ',' + (c.b|0) + ')';
+    return 'rgba(' + (c.r|0) + ',' + (c.g|0) + ',' + (c.b|0) + ',' + a + ')';
+  }
+  function shade(c, amt) {
+    // amt in [-1, 1]; positive lightens
+    const t = amt >= 0 ? 255 : 0;
+    const p = Math.abs(amt);
+    return {
+      r: Math.round(c.r + (t - c.r) * p),
+      g: Math.round(c.g + (t - c.g) * p),
+      b: Math.round(c.b + (t - c.b) * p)
+    };
+  }
+
+  function colorAt(x, y, opts) {
+    const repeat = Math.max(1, opts.repeat || 8);
+    const count = Math.max(1, opts.yarnCount || 1);
+    const variant = opts.pattern || 'diamond';
+    if (count === 1 || variant === 'solid') return 0;
+    if (variant === 'stripes') return Math.floor(y / 3) % count;
+    if (variant === 'checker') {
+      return (Math.floor((x % repeat) / Math.max(1, Math.ceil(repeat / 2))) + Math.floor(y / 4)) % count;
+    }
+    const center = (repeat - 1) / 2;
+    const dx = Math.abs((x % repeat) - center);
+    const dy = Math.abs((y % repeat) - center);
+    const radius = Math.max(0.5, center - 0.5);
+    const mark = Math.abs(dx + dy - radius) <= 0.6;
+    return mark ? 1 + (Math.floor(y / repeat) % (count - 1)) : 0;
+  }
+
+  function stitchKind(x, y, fabric, sectionKind) {
+    // sectionKind: 'rib' | 'body' | 'field' | undefined
+    if (sectionKind === 'rib') return (x % 4 < 2) ? 'knit' : 'purl';
+    const f = (fabric || 'Stockinette').toLowerCase();
+    if (f === 'garter') return 'purl';
+    if (f === 'ribbing') return (x % 4 < 2) ? 'knit' : 'purl';
+    return 'knit';
+  }
+
+  function drawKnitV(ctx, cx, cy, s, color) {
+    const c = typeof color === 'string' ? parseHex(color) : color;
+    const dark = shade(c, -0.32);
+    const mid = shade(c, -0.02);
+    const light = shade(c, 0.42);
+    const deep = shade(c, -0.48);
+    const ground = shade(c, -0.18);
+    const w = Math.max(1.6, s * 0.50);
+    const leftX1 = cx - s * 0.46;
+    const rightX1 = cx + s * 0.46;
+    const y1 = cy - s * 0.62;
+    const y2 = cy + s * 0.48;
+    const midY = cy + s * 0.04;
+
+    ctx.save();
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    // Fill the cell valley so white doesn't show through
+    ctx.fillStyle = css(ground);
+    ctx.beginPath();
+    ctx.moveTo(leftX1, y1);
+    ctx.quadraticCurveTo(cx - s * 0.2, midY, cx, y2);
+    ctx.quadraticCurveTo(cx + s * 0.2, midY, rightX1, y1);
+    ctx.closePath();
+    ctx.fill();
+
+    // valley shadow
+    ctx.strokeStyle = css(deep, 0.35);
+    ctx.lineWidth = w * 1.05;
+    ctx.beginPath();
+    ctx.moveTo(leftX1 + s * 0.05, y1 + s * 0.08);
+    ctx.quadraticCurveTo(cx, midY + s * 0.16, rightX1 - s * 0.05, y1 + s * 0.08);
+    ctx.stroke();
+
+    // left leg
+    ctx.strokeStyle = css(dark);
+    ctx.lineWidth = w;
+    ctx.beginPath();
+    ctx.moveTo(leftX1, y1);
+    ctx.quadraticCurveTo(cx - s * 0.18, midY, cx - s * 0.015, y2);
+    ctx.stroke();
+
+    // right leg
+    ctx.strokeStyle = css(mid);
+    ctx.lineWidth = w;
+    ctx.beginPath();
+    ctx.moveTo(rightX1, y1);
+    ctx.quadraticCurveTo(cx + s * 0.18, midY, cx + s * 0.015, y2);
+    ctx.stroke();
+
+    if (s >= 7) {
+      ctx.strokeStyle = css(light, 0.8);
+      ctx.lineWidth = Math.max(0.7, w * 0.30);
+      ctx.beginPath();
+      ctx.moveTo(leftX1 + s * 0.06, y1 + s * 0.08);
+      ctx.quadraticCurveTo(cx - s * 0.14, midY - s * 0.04, cx - s * 0.05, y2 - s * 0.12);
+      ctx.stroke();
+      ctx.strokeStyle = css(light, 0.48);
+      ctx.beginPath();
+      ctx.moveTo(rightX1 - s * 0.07, y1 + s * 0.1);
+      ctx.quadraticCurveTo(cx + s * 0.12, midY - s * 0.02, cx + s * 0.06, y2 - s * 0.14);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawPurl(ctx, cx, cy, s, color) {
+    const c = typeof color === 'string' ? parseHex(color) : color;
+    const dark = shade(c, -0.3);
+    const light = shade(c, 0.4);
+    const rx = s * 0.42;
+    const ry = s * 0.24;
+    ctx.save();
+    // shadow
+    ctx.fillStyle = css(dark, 0.35);
+    ctx.beginPath();
+    ctx.ellipse(cx, cy + s * 0.08, rx, ry * 0.85, 0, 0, Math.PI * 2);
+    ctx.fill();
+    // bump
+    const g = ctx.createLinearGradient(cx, cy - ry, cx, cy + ry);
+    g.addColorStop(0, css(light));
+    g.addColorStop(0.4, css(c));
+    g.addColorStop(1, css(dark));
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fill();
+    if (s >= 8) {
+      ctx.strokeStyle = css(light, 0.7);
+      ctx.lineWidth = Math.max(0.8, s * 0.05);
+      ctx.beginPath();
+      ctx.ellipse(cx, cy - ry * 0.25, rx * 0.62, ry * 0.35, 0, Math.PI, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawSimpleCell(ctx, x, y, w, h, color, outline) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, Math.max(0.5, w - (outline ? 0.4 : 0)), Math.max(0.5, h - (outline ? 0.4 : 0)));
+  }
+
+  function sectionAtRow(plan, rowFromHem) {
+    if (!plan || !plan.pieces) return { kind: 'body', id: 'body' };
+    if (plan.kind === 'hat') {
+      const brim = plan.pieces.find(p => p.id === 'brim');
+      const body = plan.pieces.find(p => p.id === 'body');
+      const brimR = brim ? brim.rows : 0;
+      const bodyR = body ? body.rows : 0;
+      if (rowFromHem < brimR) return { kind: 'rib', id: 'brim' };
+      if (rowFromHem < brimR + bodyR) return { kind: 'body', id: 'body' };
+      return { kind: 'body', id: 'crown', shaped: true };
+    }
+    if (plan.kind === 'sock') {
+      const cuff = plan.pieces.find(p => p.id === 'cuff');
+      if (cuff && rowFromHem < cuff.rows) return { kind: 'rib', id: 'cuff' };
+      return { kind: 'body', id: 'leg' };
+    }
+    if (plan.kind === 'glove') {
+      const cuff = plan.pieces.find(p => p.id === 'cuff');
+      if (cuff && rowFromHem < cuff.rows) return { kind: 'rib', id: 'cuff' };
+      return { kind: 'body', id: 'palm' };
+    }
+    if (plan.kind === 'top') {
+      const body = plan.pieces.find(p => p.id === 'body');
+      // hem is first rows of body piece — we stored hem in notes; approximate first ~10% as rib
+      const total = plan.mainRows || 1;
+      if (rowFromHem < Math.max(4, Math.round(total * 0.09))) return { kind: 'rib', id: 'hem' };
+      return { kind: 'body', id: 'body' };
+    }
+    if (plan.templateId === 'blanket') {
+      const border = plan.pieces.find(p => p.id === 'border');
+      const b = border ? border.rows : 0;
+      const total = plan.mainRows || 1;
+      const sts = plan.mainStitches || 1;
+      return { kind: 'body', id: 'field', borderRows: b, borderSts: border ? Math.round((plan.mainStitches - (plan.pieces.find(p => p.id === 'field') || { stitches: sts }).stitches) / 2) : 0 };
+    }
+    return { kind: 'body', id: 'body' };
+  }
+
+  /* Build a silhouette path in the given box. Returns {path(), widthSts, heightRows, map(px,py)->stitch, labels[]} */
+  function garmentPath(ctx, kind, box) {
+    const { x, y, w, h } = box;
+    ctx.beginPath();
+    if (kind === 'flat' || kind === 'rectangle' || kind === 'scarf' || kind === 'blanket' || !kind) {
+      if (ctx.roundRect) ctx.roundRect(x, y, w, h, 5);
+      else { ctx.rect(x, y, w, h); }
+      return;
+    }
+    if (kind === 'hat') {
+      const brim = h * 0.16;
+      const bw = w * 0.86;
+      const bx = x + (w - bw) / 2;
+      const domeY = y + h * 0.08;
+      ctx.moveTo(bx, y + h - brim);
+      ctx.lineTo(bx, y + h * 0.36);
+      ctx.bezierCurveTo(bx, y + h * 0.08, x + w / 2, y - h * 0.02, bx + bw, y + h * 0.36);
+      ctx.lineTo(bx + bw, y + h - brim);
+      ctx.lineTo(x + w * 0.98, y + h - brim * 0.35);
+      ctx.quadraticCurveTo(x + w * 0.98, y + h, x + w / 2, y + h);
+      ctx.quadraticCurveTo(x + w * 0.02, y + h, x + w * 0.02, y + h - brim * 0.35);
+      ctx.closePath();
+      return;
+    }
+    if (kind === 'top' || kind === 'sweater') {
+      const long = kind === 'sweater';
+      const bodyW = w * 0.46;
+      const bodyX = x + (w - bodyW) / 2;
+      const neckW = bodyW * 0.30;
+      const shoulderY = y + h * 0.10;
+      const neckD = h * 0.07;
+      const armholeY = shoulderY + h * 0.22;
+      const hemY = y + h;
+      const sleeveLen = (w - bodyW) / 2;
+      const sleeveHang = long ? h * 0.18 : h * 0.08;
+      ctx.moveTo(bodyX + bodyW * 0.06, hemY);
+      ctx.lineTo(bodyX, armholeY);
+      ctx.lineTo(x + 1, armholeY + sleeveHang);
+      ctx.lineTo(x + 1, shoulderY);
+      ctx.lineTo(bodyX, shoulderY);
+      const n1 = x + w / 2 - neckW / 2;
+      const n2 = x + w / 2 + neckW / 2;
+      ctx.lineTo(n1, shoulderY);
+      ctx.quadraticCurveTo(x + w / 2, shoulderY + neckD * 1.8, n2, shoulderY);
+      ctx.lineTo(bodyX + bodyW, shoulderY);
+      ctx.lineTo(x + w - 1, shoulderY);
+      ctx.lineTo(x + w - 1, armholeY + sleeveHang);
+      ctx.lineTo(bodyX + bodyW, armholeY);
+      ctx.lineTo(bodyX + bodyW, hemY);
+      ctx.closePath();
+      return;
+    }
+    if (kind === 'sock') {
+      const cuffX = x + w * 0.10;
+      const cuffW = w * 0.36;
+      const cuffBottom = y + h * 0.42;
+      const footBottom = y + h;
+      const instepY = y + h * 0.50;
+      const toeX = x + w * 0.88;
+      ctx.moveTo(cuffX, y);
+      ctx.lineTo(cuffX + cuffW, y);
+      ctx.lineTo(cuffX + cuffW, instepY);
+      ctx.lineTo(toeX, instepY + h * 0.04);
+      ctx.quadraticCurveTo(x + w, instepY + h * 0.22, toeX + w * 0.04, footBottom - h * 0.06);
+      ctx.quadraticCurveTo(toeX, footBottom, x + w * 0.55, footBottom);
+      ctx.lineTo(cuffX + cuffW * 0.15, footBottom);
+      ctx.quadraticCurveTo(x, footBottom - h * 0.02, x + w * 0.05, cuffBottom + h * 0.12);
+      ctx.quadraticCurveTo(cuffX - w * 0.02, cuffBottom, cuffX, cuffBottom);
+      ctx.closePath();
+      return;
+    }
+    if (kind === 'glove') {
+      const palmW = w * 0.50;
+      const palmX = x + w * 0.14;
+      const cuffH = h * 0.17;
+      const palmBottom = y + h - cuffH;
+      const palmH = h * 0.38;
+      const palmTop = palmBottom - palmH;
+      const fingerMax = Math.max(8, palmTop - y - h * 0.03);
+      const fingerW = palmW / 4;
+      const heights = [0.76, 0.93, 1.0, 0.86];
+      const cuffInset = palmW * 0.08;
+      const thumbW = palmW * 0.36;
+      const thumbH = h * 0.26;
+      const thumbJoinTop = palmTop + palmH * 0.16;
+      const thumbJoinBot = palmTop + palmH * 0.55;
+
+      ctx.moveTo(palmX + cuffInset, y + h);
+      ctx.lineTo(palmX + palmW - cuffInset * 0.4, y + h);
+      ctx.quadraticCurveTo(palmX + palmW, y + h - cuffH * 0.15, palmX + palmW, palmBottom);
+      ctx.lineTo(palmX + palmW, thumbJoinBot);
+
+      // Thumb branches from the right of the palm, connected at the side
+      const tipX = palmX + palmW + thumbW * 0.95;
+      const tipY = thumbJoinTop - thumbH * 0.45;
+      ctx.quadraticCurveTo(palmX + palmW + thumbW * 0.55, thumbJoinBot + h * 0.01, palmX + palmW + thumbW * 0.85, (thumbJoinBot + tipY) / 2);
+      ctx.quadraticCurveTo(tipX + thumbW * 0.12, tipY + thumbH * 0.18, tipX - thumbW * 0.05, tipY);
+      ctx.quadraticCurveTo(palmX + palmW + thumbW * 0.15, thumbJoinTop - thumbH * 0.55, palmX + palmW + thumbW * 0.04, thumbJoinTop);
+      ctx.lineTo(palmX + palmW, thumbJoinTop);
+      ctx.lineTo(palmX + palmW, palmTop);
+
+      // Fingers, right (index) to left (pinky), bases flush with the palm — no gap
+      for (let i = 3; i >= 0; i--) {
+        const fx = palmX + i * fingerW;
+        const fh = fingerMax * heights[i];
+        const top = palmTop - fh;
+        const r = Math.min(fingerW * 0.46, fh * 0.28);
+        ctx.lineTo(fx + fingerW, palmTop);
+        ctx.lineTo(fx + fingerW, top + r);
+        ctx.quadraticCurveTo(fx + fingerW, top, fx + fingerW / 2, top);
+        ctx.quadraticCurveTo(fx, top, fx, top + r);
+        ctx.lineTo(fx, palmTop);
+      }
+      ctx.lineTo(palmX, palmBottom);
+      ctx.quadraticCurveTo(palmX, y + h - cuffH * 0.15, palmX + cuffInset, y + h);
+      ctx.closePath();
+      return;
+    }
+
+    if (ctx.roundRect) ctx.roundRect(x, y, w, h, 5);
+    else ctx.rect(x, y, w, h);
+  }
+
+  function fitBox(containerW, containerH, aspect, pad) {
+    const p = pad || 28;
+    const availW = containerW - p * 2;
+    const availH = containerH - p * 2 - 16;
+    let w, h;
+    if (availW / availH > aspect) {
+      h = availH;
+      w = h * aspect;
+    } else {
+      w = availW;
+      h = w / aspect;
+    }
+    return { x: (containerW - w) / 2, y: (containerH - h) / 2 - 4, w, h };
+  }
+
+  function aspectFor(plan) {
+    if (!plan) return 1.4;
+    const w = plan.knitWidthCm || plan.finishedWidthCm || 50;
+    const h = plan.finishedHeightCm || plan.mainRows || 20;
+    const kind = plan.kind;
+    if (kind === 'hat') return 0.95;
+    if (kind === 'top') return (plan.templateId === 'sweater') ? 1.38 : 1.02;
+    if (kind === 'sock') return 1.05;
+    if (kind === 'glove') return 0.78;
+    if (kind === 'rectangle' || kind === 'flat') {
+      // Scarves are very tall; lay them horizontally for a better full view
+      const a = w / Math.max(0.1, h);
+      if (h > w * 2.2) return Math.max(2.2, Math.min(4.5, h / w)); // rotated: length / width
+      return Math.max(0.45, Math.min(2.4, a));
+    }
+    return Math.max(0.5, Math.min(2, w / h));
+  }
+
+  function isRotatedScarf(plan) {
+    if (!plan) return false;
+    if (plan.kind !== 'rectangle' && plan.kind !== 'flat') return false;
+    const w = plan.knitWidthCm || plan.finishedWidthCm || 50;
+    const h = plan.finishedHeightCm || 20;
+    return h > w * 2.2;
+  }
+
+  /**
+   * Paint a stitch grid into a clipped region.
+   * origin: {ox, oy} stitch offsets; cols, rows: visible stitches
+   * box: pixel rect; realistic: yarn Vs vs flat cells
+   * fabric, colors[], pattern opts, plan
+   * Returns a map for hit-testing: { box, cols, rows, ox, oy, cellW, cellH, rotated }
+   */
+  function paintGrid(ctx, opts) {
+    const {
+      box, cols, rows, ox, oy, colors, pattern, repeat, yarnCount,
+      fabric, plan, realistic, showGrid, numbers
+    } = opts;
+    const cellW = box.w / cols;
+    const cellH = box.h / rows;
+    const cellMin = Math.min(cellW, cellH);
+    // Close-ups (large cells) always draw yarn stitches, in both 2D and rendered views.
+    const detailed = cellMin >= 7;
+    const midDetail = cellMin >= 3.2;
+    const pat = { pattern, repeat, yarnCount };
+
+    // Draw from top (last rows, near bind-off / crown) or bottom (hem)?
+    // Visual: hem at the bottom of the garment, so row 0 (cast-on) is at the bottom.
+    for (let r = 0; r < rows; r++) {
+      const stitchRow = oy + (rows - 1 - r); // top of canvas = higher row numbers
+      for (let c = 0; c < cols; c++) {
+        const stitchCol = ox + c;
+        const idx = colorAt(stitchCol, stitchRow, pat);
+        const color = colors[idx] || colors[0] || '#ccc';
+        const px = box.x + c * cellW;
+        const py = box.y + r * cellH;
+        const sec = sectionAtRow(plan, stitchRow);
+        // blanket border
+        let kind = stitchKind(stitchCol, stitchRow, fabric, sec.kind);
+        if (plan && plan.templateId === 'blanket' && sec.borderSts != null) {
+          const bs = sec.borderSts, br = sec.borderRows || 0;
+          const totalC = plan.mainStitches, totalR = plan.mainRows;
+          if (stitchCol < bs || stitchCol >= totalC - bs || stitchRow < br || stitchRow >= totalR - br) {
+            kind = 'purl';
+          }
+        }
+        const cobj = parseHex(color);
+        if (detailed) {
+          // Fabric ground so white doesn't flash between stitches
+          ctx.fillStyle = css(shade(cobj, -0.16));
+          ctx.fillRect(px - 0.3, py - 0.3, cellW + 0.6, cellH + 0.6);
+          const cx = px + cellW / 2;
+          const cy = py + cellH / 2;
+          const s = Math.min(cellW, cellH) * 1.08;
+          if (kind === 'purl') drawPurl(ctx, cx, cy, s, color);
+          else drawKnitV(ctx, cx, cy, s, color);
+        } else if (midDetail) {
+          ctx.fillStyle = css(shade(cobj, -0.08));
+          ctx.fillRect(px, py, cellW + 0.4, cellH + 0.4);
+          ctx.fillStyle = css(cobj);
+          ctx.beginPath();
+          ctx.moveTo(px + cellW * 0.10, py + cellH * 0.08);
+          ctx.lineTo(px + cellW * 0.5, py + cellH * 0.94);
+          ctx.lineTo(px + cellW * 0.90, py + cellH * 0.08);
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = css(shade(cobj, 0.28), 0.55);
+          ctx.lineWidth = Math.max(0.5, cellMin * 0.08);
+          ctx.beginPath();
+          ctx.moveTo(px + cellW * 0.18, py + cellH * 0.14);
+          ctx.lineTo(px + cellW * 0.46, py + cellH * 0.78);
+          ctx.stroke();
+        } else {
+          drawSimpleCell(ctx, px, py, cellW, cellH, color, showGrid && cellW >= 3);
+        }
+      }
+    }
+    if (showGrid && cellW >= 6 && cellH >= 6) {
+      ctx.strokeStyle = 'rgba(40,50,40,0.10)';
+      ctx.lineWidth = 0.6;
+      ctx.beginPath();
+      for (let c = 0; c <= cols; c++) {
+        ctx.moveTo(box.x + c * cellW, box.y);
+        ctx.lineTo(box.x + c * cellW, box.y + box.h);
+      }
+      for (let r = 0; r <= rows; r++) {
+        ctx.moveTo(box.x, box.y + r * cellH);
+        ctx.lineTo(box.x + box.w, box.y + r * cellH);
+      }
+      ctx.stroke();
+    }
+    if (numbers && cellW >= 14 && cellH >= 14) {
+      ctx.save();
+      ctx.font = '700 11px Inter, ui-sans-serif, system-ui, sans-serif';
+      ctx.fillStyle = 'rgba(40,50,40,0.72)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      // knitting charts: stitch 1 is on the RIGHT
+      for (let c = 0; c < cols; c++) {
+        const n = ox + (cols - c); // rightmost visible = first of this window? 
+        // Actually: stitch index ox+c from left. Number from the right of the FULL piece:
+        // stitch number (1-based from right of garment) = mainStitches - (ox+c)
+        const stitchCol = ox + c;
+        const total = (plan && plan.mainStitches) || (ox + cols);
+        const label = total - stitchCol;
+        ctx.fillText(String(label), box.x + c * cellW + cellW / 2, box.y - 4);
+      }
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let r = 0; r < rows; r++) {
+        const stitchRow = oy + (rows - 1 - r);
+        ctx.fillText(String(stitchRow + 1), box.x - 6, box.y + r * cellH + cellH / 2);
+      }
+      ctx.restore();
+    }
+    return { box, cols, rows, ox, oy, cellW, cellH };
+  }
+
+  root.KnitRender = {
+    parseHex, css, shade, colorAt, stitchKind,
+    drawKnitV, drawPurl, garmentPath, fitBox, aspectFor, isRotatedScarf,
+    paintGrid, sectionAtRow
+  };
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+(function () {
+  'use strict';
+  const ids = ['stitches', 'preWidthCm', 'rows', 'preHeightCm', 'postWidthCm', 'postHeightCm', 'referenceStsPer10Cm', 'targetWidthCm', 'targetHeightCm', 'repeat', 'pattern', 'yarnCount', 'fabric', 'colorA', 'colorB', 'colorC', 'useRelaxed', 'easePct', 'extraCm'];
+  const el = id => document.getElementById(id);
+  let lastResult = null;
+  let lastPlan = null;
+  let lastChart = null;
+  let lastColors = [];
+  let viewMode = '2d';
+  let previewScope = 'full';
+  let zoomPct = 100;
+  let panX = 0, panY = 0; // stitch offsets for close-up / pan
+  let loupeStitch = { x: 0, y: 0 };
+  let previewHit = null; // last paint map
+  let dragging = false, dragStart = null;
+  let threeScene = null, threeCamera = null, threeRenderer = null, threeGroup = null;
+  let timelapseInterval = null;
+  let selectedTemplate = 'custom';
+  let selectedSize = null;
+  let applyingTemplate = false;
+
+  const example = { stitches: 22, preWidthCm: 10, rows: 28, preHeightCm: 10, postWidthCm: 10.8, postHeightCm: 10.6, referenceStsPer10Cm: 20, targetWidthCm: 50, targetHeightCm: 20, repeat: 8, pattern: 'diamond', yarnCount: 3, fabric: 'Stockinette', colorA: '#e9d8b8', colorB: '#66734f', colorC: '#ba7657', useRelaxed: true, easePct: 0, extraCm: 16 };
+  const fmt = n => Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+  const signed = n => (n >= 0 ? '+' : '') + fmt(n) + '%';
+
+  function data() {
+    const d = {};
+    for (const id of ids) {
+      const node = el(id);
+      if (!node) continue;
+      d[id] = node.type === 'checkbox' ? node.checked : node.value;
+    }
+    return d;
+  }
+
+  /* ---------- Templates UI ---------- */
+  function buildTemplateGrid() {
+    const grid = el('templateGrid');
+    grid.replaceChildren();
+    KnitTemplates.ORDER.forEach(id => {
+      const t = KnitTemplates.TEMPLATES[id];
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'template-card' + (id === selectedTemplate ? ' selected' : '');
+      btn.setAttribute('role', 'option');
+      btn.setAttribute('aria-selected', id === selectedTemplate ? 'true' : 'false');
+      btn.dataset.template = id;
+      btn.innerHTML = KnitTemplates.ICONS[id] + '<span class="t-name">' + t.name + '</span>';
+      btn.addEventListener('click', () => selectTemplate(id));
+      grid.appendChild(btn);
+    });
+  }
+
+  function buildSizeChips() {
+    const tmpl = KnitTemplates.TEMPLATES[selectedTemplate];
+    const row = el('sizeRow');
+    const chips = el('sizeChips');
+    chips.replaceChildren();
+    if (!tmpl.sizes) {
+      row.hidden = true;
+      return;
+    }
+    row.hidden = false;
+    Object.keys(tmpl.sizes).forEach(key => {
+      const s = tmpl.sizes[key];
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'size-chip' + (key === selectedSize ? ' selected' : '');
+      btn.textContent = s.label;
+      btn.dataset.size = key;
+      btn.addEventListener('click', () => selectSize(key));
+      chips.appendChild(btn);
+    });
+  }
+
+  function applySizeFields(tmpl, size) {
+    applyingTemplate = true;
+    el('targetWidthCm').value = size.width;
+    el('targetHeightCm').value = size.height;
+    if (size.extra != null) el('extraCm').value = size.extra;
+    if (size.ease != null) el('easePct').value = size.ease;
+    else el('easePct').value = tmpl.easeDefault || 0;
+    applyingTemplate = false;
+  }
+
+  function updateTemplateChrome() {
+    const tmpl = KnitTemplates.TEMPLATES[selectedTemplate];
+    el('templateHint').textContent = tmpl.blurb || '';
+    el('widthLabel').textContent = tmpl.labels.width;
+    el('heightLabel').textContent = tmpl.labels.height;
+    const extras = el('garmentExtras');
+    const easeField = el('easeField');
+    const extraField = el('extraField');
+    const easeHint = el('easeHint');
+    const isGarment = tmpl.kind === 'hat' || tmpl.kind === 'top' || tmpl.kind === 'sock' || tmpl.kind === 'glove';
+    extras.hidden = !isGarment && tmpl.kind !== 'rectangle';
+    // Always show extras container for garments; hide for custom
+    if (tmpl.id === 'custom') {
+      extras.hidden = true;
+      easeHint.hidden = true;
+    } else if (isGarment) {
+      extras.hidden = false;
+      easeField.hidden = false;
+      easeHint.hidden = false;
+      easeHint.textContent = tmpl.easeHelp || '';
+      if (tmpl.labels.extra) {
+        extraField.hidden = false;
+        el('extraLabel').textContent = tmpl.labels.extra;
+      } else {
+        extraField.hidden = true;
+      }
+    } else {
+      extras.hidden = true;
+      easeHint.hidden = true;
+    }
+    const sizeSub = el('sizeSubline');
+    if (tmpl.id === 'custom') {
+      sizeSub.textContent = 'Flat fabric using the width and height you set.';
+    } else {
+      sizeSub.textContent = 'Preset sizes fill the measurements; you can still edit them. Stitch counts follow your gauge.';
+    }
+  }
+
+  function selectTemplate(id, skipApply) {
+    selectedTemplate = id;
+    const tmpl = KnitTemplates.TEMPLATES[id];
+    selectedSize = tmpl.defaultSize || null;
+    buildTemplateGrid();
+    buildSizeChips();
+    updateTemplateChrome();
+    if (!skipApply && selectedSize && tmpl.sizes) {
+      applySizeFields(tmpl, tmpl.sizes[selectedSize]);
+    }
+    panX = 0; panY = 0;
+    render();
+  }
+
+  function selectSize(key) {
+    const tmpl = KnitTemplates.TEMPLATES[selectedTemplate];
+    if (!tmpl.sizes || !tmpl.sizes[key]) return;
+    selectedSize = key;
+    buildSizeChips();
+    applySizeFields(tmpl, tmpl.sizes[key]);
+    panX = 0; panY = 0;
+    render();
+  }
+
+  /* ---------- 3D (unchanged behavior) ---------- */
+  function initThree() {
+    if (threeRenderer) return;
+    const container = el('threeContainer');
+    threeScene = new THREE.Scene();
+    threeScene.background = new THREE.Color(0xf0f3ec);
+    threeCamera = new THREE.PerspectiveCamera(45, container.clientWidth / Math.max(1, container.clientHeight), 0.1, 1000);
+    threeCamera.position.set(0, 8, 18);
+    threeCamera.lookAt(0, 0, 0);
+    threeRenderer = new THREE.WebGLRenderer({ antialias: true });
+    threeRenderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(threeRenderer.domElement);
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 10, 7);
+    threeScene.add(light);
+    threeScene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    threeGroup = new THREE.Group();
+    threeScene.add(threeGroup);
+    function animate() {
+      requestAnimationFrame(animate);
+      if (threeGroup) threeGroup.rotation.y += 0.003;
+      threeRenderer.render(threeScene, threeCamera);
+    }
+    animate();
+  }
+
+  function build3D(chart, colors, progress) {
+    if (!threeGroup) return;
+    while (threeGroup.children.length) threeGroup.remove(threeGroup.children[0]);
+    if (!chart || !chart.length) return;
+    const h = chart.length, w = chart[0].length;
+    const scale = 0.35;
+    const maxRows = Math.ceil(h * (progress == null ? 1 : progress));
+    for (let y = 0; y < maxRows; y++) {
+      for (let x = 0; x < w; x++) {
+        const idx = chart[y][x];
+        const color = new THREE.Color(colors[idx] || '#ccc');
+        const geom = new THREE.BoxGeometry(scale * 0.9, 0.15 + (idx * 0.08), scale * 0.9);
+        const mat = new THREE.MeshLambertMaterial({ color });
+        const mesh = new THREE.Mesh(geom, mat);
+        mesh.position.set((x - w / 2) * scale, 0, (y - h / 2) * scale);
+        threeGroup.add(mesh);
+      }
+    }
+  }
+
+  /* ---------- Construction plan panel ---------- */
+  function renderPlan(plan) {
+    const card = el('planCard');
+    if (!plan || plan.templateId === 'custom') {
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+    el('planTag').textContent = plan.sizeLabel + ' · ' + plan.templateName;
+    el('planSub').textContent = plan.summary || 'Stitch and row counts from your gauge.';
+    const stack = el('planStack');
+    stack.replaceChildren();
+    plan.pieces.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'plan-band' + (p.shaped ? ' shaped' : '');
+      div.innerHTML = '<strong>' + p.name + '</strong><span>' + p.stitches + ' sts × ' + p.rows + ' rows · ' + fmt(p.widthCm) + ' × ' + fmt(p.heightCm) + ' cm</span>';
+      stack.appendChild(div);
+    });
+    const body = el('planBody');
+    body.replaceChildren();
+    plan.pieces.forEach(p => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + p.name + '</td><td class="num">' + p.stitches + '</td><td class="num">' + p.rows + '</td><td class="num">' + fmt(p.widthCm) + ' × ' + fmt(p.heightCm) + ' cm</td><td class="notes">' + (p.notes || '') + '</td>';
+      body.appendChild(tr);
+    });
+    const hint = el('planHint');
+    const notes = (plan.notes || []).slice();
+    notes.push(plan.disclaimer);
+    hint.textContent = notes.join(' ');
+  }
+
+  /* ---------- Main calculate + preview ---------- */
+  function currentPlan(r, d) {
+    const gauge = {
+      stsCm: r.input.stitches / r.input.postWidthCm,
+      rowsCm: r.input.rows / r.input.postHeightCm
+    };
+    return KnitTemplates.buildPlan(selectedTemplate, selectedSize, gauge, {
+      width: Number(d.targetWidthCm),
+      height: Number(d.targetHeightCm),
+      extra: Number(d.extraCm),
+      easePct: Number(d.easePct),
+      repeat: Number(d.repeat)
+    });
+  }
+
+  function render() {
+    const d = data();
+    el('afterFields').hidden = !d.useRelaxed;
+    el('colorBWrap').hidden = Number(d.yarnCount) < 2;
+    el('colorCWrap').hidden = Number(d.yarnCount) < 3;
+    const err = el('error');
+    err.hidden = true;
+    err.textContent = '';
+    try {
+      const r = window.StitchCore.calculate(d);
+      lastResult = r;
+      const plan = currentPlan(r, d);
+      lastPlan = plan;
+
+      const outSts = plan.mainStitches != null ? plan.mainStitches : r.design.stitches;
+      const outRows = plan.mainRows != null ? plan.mainRows : r.design.rows;
+      el('outStitches').textContent = fmt(outSts);
+      el('outRows').textContent = fmt(outRows);
+      const knitW = plan.knitWidthCm != null ? plan.knitWidthCm : r.design.projectedWidthCm;
+      const knitH = plan.finishedHeightCm != null ? (plan.kind === 'hat' || plan.kind === 'top' ? plan.finishedHeightCm : r.design.projectedHeightCm) : r.design.projectedHeightCm;
+      // For garments, show the planned dimensions
+      if (plan.templateId !== 'custom') {
+        el('outWidth').textContent = fmt(knitW) + ' cm';
+        el('outHeight').textContent = fmt(plan.finishedHeightCm) + ' cm';
+        el('outWidthSub').textContent = (plan.kind === 'hat' || plan.kind === 'sock' || plan.kind === 'glove' || plan.kind === 'top')
+          ? 'Knit circumference after ease'
+          : 'After repeat rounding';
+        el('outHeightSub').textContent = plan.kind === 'sock' ? 'Foot length (leg is extra)' : (plan.kind === 'glove' ? 'Hand length (cuff is extra)' : 'From planned rows');
+        el('outRepeats').textContent = fmt(outSts / r.input.repeat) + ' × ' + fmt(r.input.repeat) + '-stitch repeats';
+        el('outRowsSub').textContent = plan.kind === 'top' ? 'Body rows, including hem' : 'Across all sections';
+      } else {
+        el('outWidth').textContent = fmt(r.design.projectedWidthCm) + ' cm';
+        el('outHeight').textContent = fmt(r.design.projectedHeightCm) + ' cm';
+        el('outWidthSub').textContent = 'After repeat rounding';
+        el('outHeightSub').textContent = 'Before shaping or borders';
+        el('outRepeats').textContent = fmt(r.design.repeatsAcross) + ' × ' + fmt(r.input.repeat) + '-stitch repeats';
+        el('outRowsSub').textContent = 'At measured row gauge';
+      }
+
+      el('modeInfo').textContent = r.relaxation.measured ? 'Sizing from after-blocking measurements.' : 'Provisional: using your current swatch measurements.';
+      const status = el('status');
+      status.className = 'status' + (r.relaxation.measured ? '' : ' warn');
+      status.textContent = r.relaxation.measured
+        ? ('Measured relaxation: width ' + signed(r.relaxation.widthChangePct) + ', height ' + signed(r.relaxation.heightChangePct) + '. Gauge now ' + fmt(r.gauge.finishedStsPer10Cm) + ' sts and ' + fmt(r.gauge.finishedRowsPer10Cm) + ' rows / 10 cm.')
+        : 'Blocked gauge is unknown. These measurements are a provisional starting point.';
+      el('calcBadge').textContent = r.relaxation.measured ? 'Relaxed gauge' : 'Provisional gauge';
+      el('referenceInfo').textContent = r.comparison ? (r.comparison.label + ' (' + signed(r.comparison.deltaPct) + ')') : 'Reference gauge not entered';
+      const notes = el('notes');
+      notes.replaceChildren();
+      r.warnings.forEach(w => { const li = document.createElement('li'); li.textContent = w; notes.appendChild(li); });
+
+      el('formula1').textContent = 'Finished stitch gauge: ' + fmt(r.input.stitches) + ' / ' + fmt(r.input.postWidthCm) + ' cm = ' + fmt(r.gauge.finishedStsPer10Cm) + ' sts / 10 cm';
+      if (plan.templateId !== 'custom' && plan.knitWidthCm != null) {
+        el('formula2').textContent = (plan.kind === 'flat' || plan.kind === 'rectangle'
+          ? ('Width: ' + fmt(r.input.targetWidthCm) + ' cm × gauge → ' + fmt(plan.mainStitches) + ' stitches (repeat ' + r.input.repeat + ')')
+          : ('Knit circumference: body ' + fmt(r.input.targetWidthCm) + ' cm × (1 + ease ' + plan.easePct + '%) ≈ ' + fmt(plan.knitWidthCm) + ' cm → ' + fmt(plan.mainStitches) + ' stitches (rounded to the repeat)'));
+        el('formula3').textContent = 'Sections use the same row gauge: ' + fmt(r.gauge.finishedRowsPer10Cm) + ' rows / 10 cm. ' + (plan.summary || '');
+      } else {
+        el('formula2').textContent = 'Width: ' + fmt(r.input.targetWidthCm) + ' cm × ' + fmt(r.gauge.finishedStsPer10Cm) + '/10 = ' + fmt(r.input.targetWidthCm * r.input.stitches / r.input.postWidthCm) + ' → ' + fmt(r.design.stitches) + ' stitches (repeat ' + r.input.repeat + ')';
+        el('formula3').textContent = 'Height: ' + fmt(r.input.targetHeightCm) + ' cm × ' + fmt(r.gauge.finishedRowsPer10Cm) + '/10 = ' + fmt(r.input.targetHeightCm * r.input.rows / r.input.postHeightCm) + ' → ' + fmt(r.design.rows) + ' rows';
+      }
+
+      const count = Number(d.yarnCount), repeat = Number(d.repeat), colors = [d.colorA, d.colorB, d.colorC];
+      lastColors = colors;
+      // 3D / timelapse still use a compact chart
+      const width = Math.max(12, Math.min(36, repeat * Math.max(2, Math.ceil(24 / repeat))));
+      lastChart = window.StitchCore.generateChart({ width, height: 16, repeat, yarnCount: count, pattern: d.pattern });
+
+      renderPlan(plan);
+      updateView();
+    } catch (e) {
+      lastResult = null;
+      lastPlan = null;
+      err.hidden = false;
+      err.textContent = e.message;
+      el('calcBadge').textContent = 'Check inputs';
+    }
+  }
+
+  function setScope(scope) {
+    previewScope = scope;
+    document.querySelectorAll('.scope-controls button').forEach(b => b.classList.toggle('active', b.dataset.scope === scope));
+    // Reset pan when jumping to a new close-up size so the window is on-piece
+    if (scope !== 'full') {
+      /* keep pan if possible */
+    }
+    updateView();
+  }
+
+  function setZoom(pct) {
+    zoomPct = Math.max(50, Math.min(300, pct));
+    el('zoomSlider').value = zoomPct;
+    el('zoomLabel').textContent = Math.round(zoomPct) + '%';
+    updateView();
+  }
+
+  function visibleWindow(plan, canvasW, canvasH) {
+    const totalC = Math.max(1, plan.mainStitches || 24);
+    const totalR = Math.max(1, plan.mainRows || 16);
+    const repeat = lastResult ? lastResult.input.repeat : 8;
+    let cols, rows;
+    if (previewScope === '5') { cols = 5; rows = 5; }
+    else if (previewScope === '10') { cols = 10; rows = 10; }
+    else if (previewScope === 'motif') {
+      cols = repeat;
+      rows = repeat;
+    } else {
+      cols = totalC;
+      rows = totalR;
+    }
+    // For close-ups, zoom increases the drawn stitch size by shrinking how we use... 
+    // Actually zoom is applied as cell size preference: we don't change cols.
+    // Pan is in stitch units, clamped.
+    const maxOx = Math.max(0, totalC - cols);
+    const maxOy = Math.max(0, totalR - rows);
+    const ox = Math.max(0, Math.min(maxOx, Math.round(panX)));
+    const oy = Math.max(0, Math.min(maxOy, Math.round(panY)));
+    panX = ox; panY = oy;
+    return { cols, rows, ox, oy, totalC, totalR };
+  }
+
+  function paintFabric() {
+    const canvas = el('fabricCanvas');
+    if (!canvas || !lastPlan || !lastResult) return;
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = Math.max(100, canvas.clientWidth);
+    const cssH = Math.max(200, canvas.clientHeight);
+    canvas.width = Math.floor(cssW * dpr);
+    canvas.height = Math.floor(cssH * dpr);
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
+
+    const bg = ctx.createLinearGradient(0, 0, 0, cssH);
+    bg.addColorStop(0, '#f7f4ee');
+    bg.addColorStop(1, '#efeae2');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, cssW, cssH);
+
+    const d = data();
+    const plan = lastPlan;
+    const realistic = viewMode === 'rendered';
+    const win = visibleWindow(plan, cssW, cssH);
+    const pat = { pattern: d.pattern, repeat: Number(d.repeat), yarnCount: Number(d.yarnCount) };
+    const colors = lastColors;
+    const fabric = d.fabric;
+    const zoom = zoomPct / 100;
+
+    if (previewScope === 'full') {
+      const rotated = KnitRender.isRotatedScarf(plan);
+      const aspect = KnitRender.aspectFor(plan);
+      let box = KnitRender.fitBox(cssW, cssH, aspect, 36);
+      // apply zoom (scale around center, may clip — user can pan via loupe only in full? allow pan as pixel offset)
+      if (zoom !== 1) {
+        const cx = box.x + box.w / 2, cy = box.y + box.h / 2;
+        box = { x: cx - box.w * zoom / 2 + panX * 0, y: cy - box.h * zoom / 2, w: box.w * zoom, h: box.h * zoom };
+      }
+      ctx.save();
+      KnitRender.garmentPath(ctx, pathKind(plan), box);
+      ctx.clip();
+      // Fill with stitches. For tops/hats we still fill the bounding box (clipped to silhouette).
+      // For a scarf laid horizontally, swap axes: length along width.
+      let cols = win.totalC, rows = win.totalR;
+      let gridBox = { x: box.x, y: box.y, w: box.w, h: box.h };
+      if (rotated) {
+        // length (rows) along canvas width, width (sts) along canvas height
+        // We'll just draw cols=totalC along the short side... visual: stitches across the short dimension.
+        // box is already long-horizontal. Map stitches to short side (h), rows to long side (w).
+        // Easier: keep grid as cols x rows in the box, with cols = stitches (short) — if box is wide, 
+        // aspect already is length/width so box is wide. We want stitches on the short axis (height).
+        // That's rows of stitches along height = totalC, along width = totalR. Swap.
+        const swappedPlanCols = win.totalR;
+        const swappedPlanRows = win.totalC;
+        // colorAt(x,y) - if we swap, x should be row, y should be stitch? 
+        // Let's paint manually: along box width, iterate rows (length); along height, iterate stitches.
+        paintRotated(ctx, {
+          box, totalC: win.totalC, totalR: win.totalR, colors, pat, fabric, plan, realistic
+        });
+        ctx.restore();
+        strokeGarment(ctx, plan, box);
+        labelGarment(ctx, plan, box, cssW, cssH);
+        previewHit = { mode: 'full', rotated: true, box, cols: win.totalR, rows: win.totalC, ox: 0, oy: 0, cellW: box.w / win.totalR, cellH: box.h / win.totalC, totalC: win.totalC, totalR: win.totalR };
+        paintLoupe(ctx, cssW, cssH, d, plan, realistic);
+        return;
+      }
+      previewHit = KnitRender.paintGrid(ctx, {
+        box: gridBox, cols, rows, ox: 0, oy: 0, colors, pattern: pat.pattern, repeat: pat.repeat,
+        yarnCount: pat.yarnCount, fabric, plan, realistic, showGrid: !realistic && Math.min(gridBox.w / cols, gridBox.h / rows) >= 6, numbers: false
+      });
+      previewHit.mode = 'full';
+      previewHit.totalC = win.totalC;
+      previewHit.totalR = win.totalR;
+      ctx.restore();
+      strokeGarment(ctx, plan, box);
+      labelGarment(ctx, plan, box, cssW, cssH);
+      paintLoupe(ctx, cssW, cssH, d, plan, realistic);
+      return;
+    }
+
+    // Close-up: 5x5, 10x10, motif — large stitches, chart numbers
+    const marginL = 36, marginT = 28, marginR = 18, marginB = 28;
+    const availW = cssW - marginL - marginR;
+    const availH = cssH - marginT - marginB;
+    const base = Math.min(availW / win.cols, availH / win.rows);
+    const cell = base * zoom;
+    const gridW = cell * win.cols;
+    const gridH = cell * win.rows;
+    let gx = marginL + (availW - gridW) / 2;
+    let gy = marginT + (availH - gridH) / 2;
+    // If zoomed past the canvas, allow pixel-level... we already expanded cell; if bigger than canvas, clamp origin so it's visible
+    if (gridW > availW) gx = marginL;
+    if (gridH > availH) gy = marginT;
+    const box = { x: gx, y: gy, w: gridW, h: gridH };
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, cssW, cssH);
+    ctx.clip();
+    previewHit = KnitRender.paintGrid(ctx, {
+      box, cols: win.cols, rows: win.rows, ox: win.ox, oy: win.oy, colors,
+      pattern: pat.pattern, repeat: pat.repeat, yarnCount: pat.yarnCount,
+      fabric, plan, realistic, showGrid: viewMode === '2d', numbers: true
+    });
+    previewHit.mode = previewScope;
+    previewHit.totalC = win.totalC;
+    previewHit.totalR = win.totalR;
+    ctx.restore();
+
+    // Caption of window
+    ctx.font = '600 11px Inter, ui-sans-serif, system-ui, sans-serif';
+    ctx.fillStyle = '#50654e';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    const total = win.totalC;
+    const rightSt = total - win.ox;
+    const leftSt = total - (win.ox + win.cols) + 1;
+    ctx.fillText('Stitches ' + leftSt + '–' + rightSt + ' (chart: right to left)  ·  Rows ' + (win.oy + 1) + '–' + (win.oy + win.rows) + '  ·  drag to move the window', cssW / 2, cssH - 8);
+  }
+
+  function paintRotated(ctx, o) {
+    // box is horizontal; along width = rows (length), along height = stitches (width)
+    const { box, totalC, totalR, colors, pat, fabric, plan, realistic } = o;
+    const cellW = box.w / totalR;
+    const cellH = box.h / totalC;
+    const detailed = realistic && Math.min(cellW, cellH) >= 7;
+    for (let r = 0; r < totalC; r++) {
+      // r from top: stitch 0 at... width direction: stitch 0 at bottom or top? Bottom = one edge.
+      const stitchCol = r; // not quite — height of scarf is length (rows). Width of scarf is stitches, along box.h
+      // Let's define: box.x along length (row 0 at left = cast-on? or row 0 at right). Left = start (cast-on).
+      for (let c = 0; c < totalR; c++) {
+        const stitchRow = c;
+        const idx = KnitRender.colorAt(stitchCol, stitchRow, pat);
+        const color = colors[idx] || colors[0] || '#ccc';
+        const px = box.x + c * cellW;
+        const py = box.y + (totalC - 1 - r) * cellH;
+        if (detailed) {
+          const s = Math.min(cellW, cellH);
+          const kind = KnitRender.stitchKind(stitchCol, stitchRow, fabric, 'body');
+          if (kind === 'purl') KnitRender.drawPurl(ctx, px + cellW / 2, py + cellH / 2, s, color);
+          else KnitRender.drawKnitV(ctx, px + cellW / 2, py + cellH / 2, s, color);
+        } else {
+          ctx.fillStyle = color;
+          ctx.fillRect(px, py, Math.max(0.5, cellW - 0.15), Math.max(0.5, cellH - 0.15));
+        }
+      }
+    }
+  }
+
+  function strokeGarment(ctx, plan, box) {
+    ctx.save();
+    KnitRender.garmentPath(ctx, pathKind(plan), box);
+    ctx.strokeStyle = 'rgba(48,74,56,0.55)';
+    ctx.lineWidth = 1.6;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    // Section lines for beanie
+    if (plan.kind === 'hat' && plan.pieces.length) {
+      const brim = plan.pieces.find(p => p.id === 'brim');
+      const body = plan.pieces.find(p => p.id === 'body');
+      const totalR = plan.mainRows || 1;
+      const brimR = brim ? brim.rows : 0;
+      const bodyR = body ? body.rows : 0;
+      const brimY = box.y + box.h - (brimR / totalR) * box.h;
+      const bodyY = box.y + box.h - ((brimR + bodyR) / totalR) * box.h;
+      ctx.strokeStyle = 'rgba(48,74,56,0.25)';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(box.x + box.w * 0.08, brimY);
+      ctx.lineTo(box.x + box.w * 0.92, brimY);
+      ctx.moveTo(box.x + box.w * 0.16, bodyY);
+      ctx.lineTo(box.x + box.w * 0.84, bodyY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    ctx.restore();
+  }
+
+  function pathKind(plan) {
+    if (plan.templateId === 'sweater') return 'sweater';
+    if (plan.kind === 'top') return 'top';
+    if (plan.kind === 'hat') return 'hat';
+    if (plan.kind === 'sock') return 'sock';
+    if (plan.kind === 'glove') return 'glove';
+    return 'rectangle';
+  }
+
+  function labelGarment(ctx, plan, box, cssW, cssH) {
+    ctx.save();
+    ctx.fillStyle = '#3a523d';
+    ctx.font = '700 12px Inter, ui-sans-serif, system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    const title = plan.templateName + (plan.sizeLabel ? ' · ' + plan.sizeLabel : '');
+    ctx.fillText(title, cssW / 2, Math.max(18, box.y - 8));
+    ctx.font = '600 11px Inter, ui-sans-serif, system-ui, sans-serif';
+    ctx.fillStyle = '#50654e';
+    ctx.textBaseline = 'top';
+    const wLabel = (plan.kind === 'hat' || plan.kind === 'sock' || plan.kind === 'glove' || plan.kind === 'top')
+      ? (fmt(plan.knitWidthCm) + ' cm knit circ.  ·  ' + plan.mainStitches + ' sts')
+      : (fmt(plan.knitWidthCm) + ' × ' + fmt(plan.finishedHeightCm) + ' cm  ·  ' + plan.mainStitches + ' sts × ' + plan.mainRows + ' rows');
+    ctx.fillText(wLabel, cssW / 2, Math.min(cssH - 16, box.y + box.h + 6));
+    ctx.restore();
+  }
+
+  function paintLoupe(ctx, cssW, cssH, d, plan, realistic) {
+    if (!el('showLoupe').checked) return;
+    const size = Number(el('loupeSize').value) || 10;
+    const totalC = plan.mainStitches;
+    const totalR = plan.mainRows;
+    let lx = Math.round(loupeStitch.x);
+    let ly = Math.round(loupeStitch.y);
+    lx = Math.max(0, Math.min(Math.max(0, totalC - size), lx));
+    ly = Math.max(0, Math.min(Math.max(0, totalR - size), ly));
+    loupeStitch.x = lx;
+    loupeStitch.y = ly;
+
+    // Frame on the garment corresponding to this window
+    if (previewHit && previewHit.box) {
+      const hb = previewHit;
+      if (hb.rotated) {
+        // skip frame accuracy issues; still draw inset
+      } else if (hb.cellW && hb.cellH) {
+        const fw = size * hb.cellW;
+        const fh = size * hb.cellH;
+        if (fw >= 16 && fh >= 16) {
+          const fx = hb.box.x + lx * hb.cellW;
+          const fy = hb.box.y + (totalR - ly - size) * hb.cellH;
+          ctx.save();
+          ctx.strokeStyle = 'rgba(255,255,255,0.95)';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(fx, fy, fw, fh);
+          ctx.strokeStyle = 'rgba(48,74,56,0.55)';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(fx, fy, fw, fh);
+          ctx.restore();
+        }
+      }
+    }
+
+    const inset = Math.min(220, Math.max(150, Math.min(cssW, cssH) * 0.38));
+    const pad = 10;
+    const ix = cssW - inset - pad;
+    const iy = cssH - inset - pad - 6;
+    ctx.save();
+    ctx.fillStyle = 'rgba(255,253,248,0.96)';
+    ctx.strokeStyle = 'rgba(48,74,56,0.28)';
+    ctx.lineWidth = 1;
+    ctx.shadowColor = 'rgba(40,50,40,0.12)';
+    ctx.shadowBlur = 12;
+    if (ctx.roundRect) {
+      ctx.beginPath();
+      ctx.roundRect(ix, iy, inset, inset, 10);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.stroke();
+    } else {
+      ctx.fillRect(ix, iy, inset, inset);
+      ctx.shadowBlur = 0;
+      ctx.strokeRect(ix, iy, inset, inset);
+    }
+    const inner = { x: ix + 10, y: iy + 22, w: inset - 20, h: inset - 36 };
+    ctx.font = '700 10px Inter, ui-sans-serif, system-ui, sans-serif';
+    ctx.fillStyle = '#3a523d';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    ctx.fillText(size + '×' + size + ' stitch scope', ix + 12, iy + 7);
+    KnitRender.paintGrid(ctx, {
+      box: inner, cols: size, rows: size, ox: lx, oy: ly, colors: lastColors,
+      pattern: d.pattern, repeat: Number(d.repeat), yarnCount: Number(d.yarnCount),
+      fabric: d.fabric, plan, realistic: true, showGrid: false, numbers: false
+    });
+    ctx.restore();
+  }
+
+  function stitchFromPointer(ev) {
+    if (!previewHit || !lastPlan) return null;
+    const canvas = el('fabricCanvas');
+    const rect = canvas.getBoundingClientRect();
+    const x = ev.clientX - rect.left;
+    const y = ev.clientY - rect.top;
+    const hb = previewHit;
+    if (!hb.box || !hb.cellW || !hb.cellH) return null;
+    if (x < hb.box.x || y < hb.box.y || x > hb.box.x + hb.box.w || y > hb.box.y + hb.box.h) return null;
+    if (hb.rotated) {
+      const c = Math.floor((x - hb.box.x) / hb.cellW); // row along length
+      const r = Math.floor((hb.box.y + hb.box.h - y) / hb.cellH); // stitch
+      return { x: Math.max(0, r), y: Math.max(0, c) };
+    }
+    const c = Math.floor((x - hb.box.x) / hb.cellW);
+    const rFromTop = Math.floor((y - hb.box.y) / hb.cellH);
+    const stitchCol = (hb.ox || 0) + c;
+    const stitchRow = (hb.oy || 0) + (hb.rows - 1 - rFromTop);
+    return { x: stitchCol, y: stitchRow };
+  }
+
+  function updateView() {
+    const chartEl = el('chart'), threeEl = el('threeContainer'), canvasEl = el('renderCanvas');
+    const fabric = el('fabricCanvas'), cap = el('previewCap'), bar = el('timelapseBar');
+    const tools = el('fabricTools');
+    document.querySelectorAll('.view-controls button').forEach(b => b.classList.toggle('active', b.dataset.mode === viewMode));
+    document.querySelectorAll('.scope-controls button').forEach(b => b.classList.toggle('active', b.dataset.scope === previewScope));
+    if (viewMode === '2d' || viewMode === 'rendered') {
+      chartEl.hidden = true;
+      threeEl.hidden = true;
+      canvasEl.hidden = true;
+      fabric.hidden = false;
+      tools.hidden = false;
+      bar.hidden = true;
+      cap.textContent = viewMode === '2d'
+        ? (previewScope === 'full' ? 'Full-piece stitch chart · move the pointer to inspect a 5×5 or 10×10 scope' : 'Close-up chart · drag to pan the window, numbers run right-to-left as in a knitting chart')
+        : (previewScope === 'full' ? 'Full-piece rendered fabric · move the pointer over the garment to inspect stitches' : 'Rendered close-up · drag to pan, use the zoom slider to enlarge stitches');
+      el('previewHelp').textContent = previewScope === 'full'
+        ? 'The full piece is shown first. Hover to move the stitch scope, or switch to 5×5 / 10×10 for a larger close-up.'
+        : 'Drag to move this window across the piece. Zoom enlarges each stitch.';
+      paintFabric();
+    } else {
+      fabric.hidden = true;
+      tools.hidden = true;
+      chartEl.hidden = true;
+      canvasEl.hidden = true;
+      threeEl.hidden = false;
+      initThree();
+      if (viewMode === '3d') {
+        bar.hidden = true;
+        cap.textContent = '3D layered stitch chart · motif sample, auto-rotates';
+        build3D(lastChart, lastColors, 1);
+      } else {
+        bar.hidden = false;
+        cap.textContent = 'Time-lapse · rows appear as if being knitted';
+        const prog = Number(el('timelapseSlider').value) / 100;
+        build3D(lastChart, lastColors, prog);
+      }
+      el('previewHelp').textContent = '3D and time-lapse show a compact motif sample of your stitch pattern.';
+    }
+  }
+
+  function setMode(mode) {
+    viewMode = mode;
+    if (timelapseInterval) {
+      clearInterval(timelapseInterval);
+      timelapseInterval = null;
+      el('timelapsePlay').textContent = 'Play';
+    }
+    updateView();
+  }
+
+  function reset() {
+    selectedTemplate = 'custom';
+    selectedSize = null;
+    previewScope = 'full';
+    zoomPct = 100;
+    panX = 0; panY = 0;
+    el('zoomSlider').value = 100;
+    el('zoomLabel').textContent = '100%';
+    applyingTemplate = true;
+    for (const [k, v] of Object.entries(example)) {
+      if (!el(k)) continue;
+      if (el(k).type === 'checkbox') el(k).checked = v;
+      else el(k).value = v;
+    }
+    applyingTemplate = false;
+    buildTemplateGrid();
+    buildSizeChips();
+    updateTemplateChrome();
+    render();
+  }
+
+  function download() {
+    if (!lastResult) return;
+    const d = data(), r = lastResult, p = lastPlan;
+    const lines = [
+      'STITCH STUDIO — GAUGE + PROJECT PLAN', '',
+      'Project: ' + (p ? p.templateName : 'Custom') + (p && p.sizeLabel ? ' (' + p.sizeLabel + ')' : ''),
+      'Fabric: ' + d.fabric, 'Pattern: ' + d.pattern, 'Yarn colors: ' + d.yarnCount,
+      'Swatch: ' + r.input.stitches + ' stitches × ' + r.input.rows + ' rows across ' + r.input.preWidthCm + ' × ' + r.input.preHeightCm + ' cm before blocking',
+      'Relaxed: ' + (r.relaxation.measured ? r.input.postWidthCm + ' × ' + r.input.postHeightCm + ' cm after blocking' : 'not measured'),
+      'Finished gauge: ' + r.gauge.finishedStsPer10Cm + ' stitches × ' + r.gauge.finishedRowsPer10Cm + ' rows per 10 cm',
+      'Desired measurements: ' + r.input.targetWidthCm + ' × ' + r.input.targetHeightCm + ' cm' + (p && p.easePct ? ', ease ' + p.easePct + '%' : ''),
+      ''
+    ];
+    if (p && p.pieces && p.pieces.length) {
+      lines.push('CONSTRUCTION PLAN');
+      if (p.summary) lines.push(p.summary);
+      p.pieces.forEach(sec => {
+        lines.push('- ' + sec.name + ': ' + sec.stitches + ' stitches × ' + sec.rows + ' rows (' + sec.widthCm + ' × ' + sec.heightCm + ' cm). ' + (sec.notes || ''));
+      });
+      (p.notes || []).forEach(n => lines.push(n));
+      lines.push('');
+    }
+    lines.push(
+      'Suggested foundation: ' + (p && p.mainStitches ? p.mainStitches : r.design.stitches) + ' stitches × ' + (p && p.mainRows ? p.mainRows : r.design.rows) + ' rows',
+      'Projected dimensions: ' + r.design.projectedWidthCm + ' × ' + r.design.projectedHeightCm + ' cm',
+      'Notes: ' + (r.warnings.length ? r.warnings.join(' | ') : 'No calculation warnings.'),
+      '',
+      (p && p.disclaimer) || 'This is a gauge-based starting plan, not a validated garment pattern.'
+    );
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'stitch-studio-project-plan.txt';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 500);
+  }
+
+  /* ---------- Events ---------- */
+  ids.forEach(id => {
+    const node = el(id);
+    if (!node) return;
+    node.addEventListener('input', () => { if (!applyingTemplate) render(); });
+    node.addEventListener('change', () => { if (!applyingTemplate) render(); });
+  });
+  el('reset').addEventListener('click', reset);
+  el('download').addEventListener('click', download);
+  document.querySelectorAll('.view-controls button').forEach(btn => {
+    btn.addEventListener('click', () => setMode(btn.dataset.mode));
+  });
+  document.querySelectorAll('.scope-controls button').forEach(btn => {
+    btn.addEventListener('click', () => setScope(btn.dataset.scope));
+  });
+  el('zoomSlider').addEventListener('input', () => setZoom(Number(el('zoomSlider').value)));
+  el('zoomOut').addEventListener('click', () => setZoom(zoomPct - 25));
+  el('zoomIn').addEventListener('click', () => setZoom(zoomPct + 25));
+  el('showLoupe').addEventListener('change', updateView);
+  el('loupeSize').addEventListener('change', updateView);
+
+  el('timelapseSlider').addEventListener('input', () => {
+    if (viewMode === 'timelapse') build3D(lastChart, lastColors, Number(el('timelapseSlider').value) / 100);
+  });
+  el('timelapsePlay').addEventListener('click', () => {
+    if (timelapseInterval) {
+      clearInterval(timelapseInterval); timelapseInterval = null; el('timelapsePlay').textContent = 'Play';
+    } else {
+      el('timelapsePlay').textContent = 'Pause';
+      let p = Number(el('timelapseSlider').value);
+      timelapseInterval = setInterval(() => {
+        p += 2; if (p > 100) p = 0;
+        el('timelapseSlider').value = p;
+        build3D(lastChart, lastColors, p / 100);
+      }, 80);
+    }
+  });
+
+  const fabric = el('fabricCanvas');
+  fabric.addEventListener('pointerdown', ev => {
+    fabric.setPointerCapture(ev.pointerId);
+    dragging = true;
+    fabric.classList.add('grabbing');
+    const st = stitchFromPointer(ev);
+    dragStart = { x: ev.clientX, y: ev.clientY, panX, panY, st };
+  });
+  fabric.addEventListener('pointerup', ev => {
+    dragging = false;
+    fabric.classList.remove('grabbing');
+    try { fabric.releasePointerCapture(ev.pointerId); } catch (err) { /* ignore */ }
+  });
+  fabric.addEventListener('pointerleave', () => { dragging = false; fabric.classList.remove('grabbing'); });
+  fabric.addEventListener('pointermove', ev => {
+    if (viewMode !== '2d' && viewMode !== 'rendered') return;
+    if (previewScope === 'full') {
+      const st = stitchFromPointer(ev);
+      if (st) {
+        const size = Number(el('loupeSize').value) || 10;
+        loupeStitch.x = st.x - Math.floor(size / 2);
+        loupeStitch.y = st.y - Math.floor(size / 2);
+        paintFabric();
+      }
+      return;
+    }
+    if (!dragging || !dragStart) return;
+    const hb = previewHit;
+    if (!hb || !hb.cellW) return;
+    const dx = ev.clientX - dragStart.x;
+    const dy = ev.clientY - dragStart.y;
+    // Dragging right should reveal stitches to the left (pan window left)
+    panX = dragStart.panX - dx / hb.cellW;
+    panY = dragStart.panY + dy / hb.cellH;
+    paintFabric();
+  });
+  fabric.addEventListener('wheel', ev => {
+    if (viewMode !== '2d' && viewMode !== 'rendered') return;
+    ev.preventDefault();
+    const delta = ev.deltaY > 0 ? -15 : 15;
+    zoomPct = Math.max(50, Math.min(300, zoomPct + delta));
+    el('zoomSlider').value = zoomPct;
+    el('zoomLabel').textContent = Math.round(zoomPct) + '%';
+    paintFabric();
+  }, { passive: false });
+
+  window.addEventListener('resize', () => {
+    if (viewMode === '2d' || viewMode === 'rendered') paintFabric();
+    if (threeRenderer && el('threeContainer').clientWidth) {
+      const c = el('threeContainer');
+      threeRenderer.setSize(c.clientWidth, c.clientHeight);
+      threeCamera.aspect = c.clientWidth / Math.max(1, c.clientHeight);
+      threeCamera.updateProjectionMatrix();
+    }
+  });
+
+  buildTemplateGrid();
+  buildSizeChips();
+  updateTemplateChrome();
+  render();
+})();
+
+</script>
+</body>
+</html>

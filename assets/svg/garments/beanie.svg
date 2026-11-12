@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="Beanie flat illustration (non-scaled)">
+<title>Beanie flat reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M41 119V82 C41 39 68 18 100 18 C132 18 159 39 159 82 V119Z"/><path d="M32 112Q100 108 168 112L168 138Q100 146 32 138Z" fill="#dbe6d7"/><path d="M47 125h106" fill="none" stroke-width="1.5" stroke-dasharray="5 3"/><path d="M100 18v124" stroke="#ad654a" fill="none" stroke-width="1.2" stroke-dasharray="3 5"/></g>
+</svg>

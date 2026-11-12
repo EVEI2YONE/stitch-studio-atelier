@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="rib example illustration (non-scaled)">
+<title>rib example reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><g fill="none" stroke="#536b52" stroke-width="6" stroke-linecap="round"><path d="M29 29 Q32 52 40 55 Q48 52 51 29"/><path d="M64 29 Q67 52 75 55 Q83 52 86 29"/><path d="M116 29 Q119 52 127 55 Q135 52 138 29"/><path d="M149 29 Q152 52 160 55 Q168 52 171 29"/><path d="M29 74 Q32 97 40 100 Q48 97 51 74"/><path d="M64 74 Q67 97 75 100 Q83 97 86 74"/><path d="M116 74 Q119 97 127 100 Q135 97 138 74"/><path d="M149 74 Q152 97 160 100 Q168 97 171 74"/><path d="M29 119 Q32 142 40 145 Q48 142 51 119"/><path d="M64 119 Q67 142 75 145 Q83 142 86 119"/><path d="M116 119 Q119 142 127 145 Q135 142 138 119"/><path d="M149 119 Q152 142 160 145 Q168 142 171 119"/><path d="M100 12v138" stroke="#9fad97" stroke-width="8"/></g></g>
+</svg>

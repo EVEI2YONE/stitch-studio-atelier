@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/stitch-studio/contracts/garment-geometry.draft.schema.json",
+  "title": "GarmentGeometry vNext DRAFT - planned output",
+  "type": "object",
+  "required": [
+    "contractVersion",
+    "units",
+    "pieces",
+    "accuracy"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "draft-0.1"
+    },
+    "units": {
+      "const": "cm"
+    },
+    "accuracy": {
+      "enum": [
+        "schematic",
+        "calculated-unverified"
+      ]
+    },
+    "pieces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "outline2d",
+          "sourceComponentId"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sourceComponentId": {
+            "type": "string"
+          },
+          "outline2d": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Segment/point curve metadata (to define later)"
+            }
+          },
+          "mesh3d": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "uvMap": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "boundsCm": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

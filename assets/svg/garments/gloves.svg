@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="Gloves flat illustration (non-scaled)">
+<title>Gloves flat reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M54 146V94Q50 83 37 75Q23 65 35 56Q43 49 53 61L60 68V32Q60 22 68 22Q76 22 76 32V59V22Q76 12 85 12Q94 12 94 22V57V17Q94 7 103 7Q112 7 112 17V57V30Q112 20 121 20Q130 20 130 30V72L143 54Q154 43 163 50Q171 57 162 68L142 96L140 146Z"/><path d="M54 126h86" fill="none" stroke-width="1.5"/><path d="M76 64v-12M94 61V43M112 62V49" fill="none" stroke="#ad654a" stroke-width="1.5" stroke-dasharray="3 3"/></g>
+</svg>

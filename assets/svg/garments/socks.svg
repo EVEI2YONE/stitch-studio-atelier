@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="Socks flat illustration (non-scaled)">
+<title>Socks flat reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M46 22H101V76Q101 96 129 100L166 103Q183 105 184 121Q184 145 158 145H89Q51 145 45 124Z"/><path d="M46 43h55 M47 115L77 127M163 102L165 144" fill="none" stroke-width="1.5" stroke-dasharray="4 3"/></g>
+</svg>

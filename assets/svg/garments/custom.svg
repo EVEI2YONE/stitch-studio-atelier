@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="Custom flat illustration (non-scaled)">
+<title>Custom flat reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="42" y="22" width="116" height="114" rx="4"/><path d="M42 62h116 M42 100h116 M81 22v114 M119 22v114" fill="none" stroke-width="1.5" opacity=".5"/></g>
+</svg>

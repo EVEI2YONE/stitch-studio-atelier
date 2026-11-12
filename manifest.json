@@ -1,0 +1,371 @@
+{
+  "package": "Stitch Studio Atelier enhanced v0.4 beta",
+  "release_date": "2026-11-11 (US Eastern)",
+  "source": "user-provided Stitch Studio v0.3 + integration scaffold",
+  "scope": "Opt-in adaptive knit-texture and construction-preview implementation; no changes to underlying knitting calculations",
+  "implemented": [
+    "adapter and invalid-state clearing",
+    "physical-cm illustrative geometry for all eight templates",
+    "multiscale canvas yarn shading",
+    "stitch inspector with keyboard/touch",
+    "source-piece layers",
+    "stage-level construction time-lapse",
+    "illustrative PNG export",
+    "responsive interface"
+  ],
+  "not_implemented": [
+    "verified complete knitting chart operations",
+    "true low-poly 3D garment + UV mapping",
+    "physical yarn drape",
+    "PDF/print chart pagination",
+    "body scan and fit guarantees"
+  ],
+  "original_source_sha256": "1a6d4d046e22f790c67e4792c1178fd47fe91e803ce3b64c2439b6231eeb3b93",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "fdcb73190ae63a8b544c1e25e1b00c2da47eb7e82c2d56c282fb74f9c77ab060",
+      "bytes": 5572
+    },
+    {
+      "path": "assets/asset-contact-sheet.png",
+      "sha256": "448bdcc244b94e467474c36105c47706772ef446e4ce713bc78f6b734758d684",
+      "bytes": 76193
+    },
+    {
+      "path": "assets/gallery.html",
+      "sha256": "982e94e449343bbcfa7fb616ad4bdcce29bbac815d833acb0624c3d4fbfd7025",
+      "bytes": 3200
+    },
+    {
+      "path": "assets/svg/garments/beanie.svg",
+      "sha256": "5248debeab94c2fd8fab1efc6d4c21ce1dd7903050f1cb64fbbc25009e4b9650",
+      "bytes": 705
+    },
+    {
+      "path": "assets/svg/garments/blanket.svg",
+      "sha256": "861e4fa2d2c2cfab9c96e4a5d4717a21d99a8d9d50976779b0b02c2c073f068e",
+      "bytes": 622
+    },
+    {
+      "path": "assets/svg/garments/custom.svg",
+      "sha256": "8b1907d288de48a75ddb5d8bdcf08c0b864eedc1fecf9f1fcd592012fe3a0906",
+      "bytes": 544
+    },
+    {
+      "path": "assets/svg/garments/gloves.svg",
+      "sha256": "95a95ff14c8472edb1e1f4853127475111ec31b96b1cec2bc240d0d00bcf94fc",
+      "bytes": 794
+    },
+    {
+      "path": "assets/svg/garments/scarf.svg",
+      "sha256": "7f411fd40e2398d032305c93df1c75f1917c66a13afd2bfba20fb9c9f6c1c7a9",
+      "bytes": 600
+    },
+    {
+      "path": "assets/svg/garments/shirt.svg",
+      "sha256": "08b65b2fb1341f0880e3c151fe8d273992b5f5a1e97c6230faa14d2d5d2bdc02",
+      "bytes": 578
+    },
+    {
+      "path": "assets/svg/garments/socks.svg",
+      "sha256": "f94033e6fe0f64d06f6063f06fdb7f832e05b7f91760d6b18e39573bcdae4b7d",
+      "bytes": 592
+    },
+    {
+      "path": "assets/svg/garments/sweater.svg",
+      "sha256": "5dd5b915a50232a0e4b02e2e4818d7f8ce8d783dda28579927a938d23547df95",
+      "bytes": 697
+    },
+    {
+      "path": "assets/svg/stitches/lace-eyelet.svg",
+      "sha256": "c3d8525d351e15795c18f3a2c2dfb60cf8bd0d444b05fc68be80aa5cb833f167",
+      "bytes": 1006
+    },
+    {
+      "path": "assets/svg/stitches/purl.svg",
+      "sha256": "6b7ccd73ed1c5cc43cdbddcd39378cf6d69a3b740c718128d2fb48fc660b981b",
+      "bytes": 823
+    },
+    {
+      "path": "assets/svg/stitches/rib.svg",
+      "sha256": "687ca185cdccccb11f6eb8fe587505bffb6569b9cfdd00cab29db6f18faee10e",
+      "bytes": 1105
+    },
+    {
+      "path": "assets/svg/stitches/stockinette.svg",
+      "sha256": "43729ee4d5d3fec81a6c3096ef4e2b92ac4b3bb78153f3f2002640ae8a93c096",
+      "bytes": 920
+    },
+    {
+      "path": "assets/svg/ui/body-outline.svg",
+      "sha256": "39da11c551e186b4421afa82674d90965abb3bf53d073caa1308cce0a8b57446",
+      "bytes": 719
+    },
+    {
+      "path": "assets/svg/ui/loupe.svg",
+      "sha256": "cc511ea894a7c9ef930ed25f9490d5303a8b80eecfef64f9ae0ee46639fb7af1",
+      "bytes": 541
+    },
+    {
+      "path": "assets/svg/ui/ruler.svg",
+      "sha256": "cac4e88829ef03022e54f6a167bface658fb55d1add6d213d5924812f4e0e996",
+      "bytes": 560
+    },
+    {
+      "path": "contracts/garment-geometry.draft.schema.json",
+      "sha256": "5027872e75bd13263dde15e2cbae442a9d73b30428f4263a0e281e230aa983ff",
+      "bytes": 1557
+    },
+    {
+      "path": "contracts/garment-plan.draft.schema.json",
+      "sha256": "95096bf685b4225ed486f3a79a4982c41a5e2372fb07ec172521c8910488a877",
+      "bytes": 3867
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "91ae3514bc0ec3e67ad46c31965513e158fe1c06c7dd83a660c5567d78b28518",
+      "bytes": 4021
+    },
+    {
+      "path": "docs/ASSET_GUIDE.md",
+      "sha256": "f0cfd89494dc2616aa1c6ad64278bb81d58679d1b902b9f1f830b0393b063165",
+      "bytes": 2557
+    },
+    {
+      "path": "docs/DEVELOPER_HANDOFF.md",
+      "sha256": "c0779dc86f1dadd9f94c5b36e41b0132ca33fbecd0168a2c23f87953438afa92",
+      "bytes": 8732
+    },
+    {
+      "path": "docs/IMPLEMENTATION_NOTES.md",
+      "sha256": "0a999f290179b7c1133b36c574823a0f12d6524fcafc060cb9f499063bfbf890",
+      "bytes": 6408
+    },
+    {
+      "path": "docs/ORIGINAL_PREVIEW_ASSESSMENT.md",
+      "sha256": "daaf5954349e99aaab6768aca0eb2d314a7bcc71dbdfad4cae2338d40cb91d4a",
+      "bytes": 16828
+    },
+    {
+      "path": "docs/ORIGINAL_SOURCE_INTEGRATION_HANDOFF.md",
+      "sha256": "5d206858ba9ffdfd74ade406961ac8520b5fc2e4f9ad129e449357a9cd3de50c",
+      "bytes": 24669
+    },
+    {
+      "path": "docs/PRIOR_RESEARCH_RECOMMENDATIONS.md",
+      "sha256": "e8e5202844ce62da200016de90ec961a3e91666ed5e0880f813356289e06a12c",
+      "bytes": 11425
+    },
+    {
+      "path": "docs/REQUIREMENTS.md",
+      "sha256": "618abd4ecd0ae87be96624223b2b092ecde5490cbc5df057e4227a2af910a3d7",
+      "bytes": 8440
+    },
+    {
+      "path": "docs/TEST_PLAN.md",
+      "sha256": "efc62034c36f9a5dfa39ebffc779773be3b032c2278866935ff23a495e3feaae",
+      "bytes": 2491
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "sha256": "48c6a3500cf84c836425955f646d016877a931d30fcfd783697ec9b04c6471de",
+      "bytes": 4030
+    },
+    {
+      "path": "docs/VALIDATION_SCAFFOLD.md",
+      "sha256": "9c958472e73d916043057a7c4b7b82b83d2a8d0759c656681c61489e13f995fa",
+      "bytes": 1927
+    },
+    {
+      "path": "docs/qa-images/atelier-beanie-desktop.png",
+      "sha256": "3d053228471d9f89f63f394c722181b8d393f672565c9b07e9a084eda0764d79",
+      "bytes": 798534
+    },
+    {
+      "path": "docs/qa-images/atelier-blanket-desktop.png",
+      "sha256": "a7a6f239338be46728498571b8e7427689bcff9476b3c1d40bb093da6f83f42e",
+      "bytes": 562161
+    },
+    {
+      "path": "docs/qa-images/atelier-custom-desktop.png",
+      "sha256": "6b166a810b0fb20f85ad60516625bc140d6bcdc976be46bf380264db18da4af4",
+      "bytes": 657925
+    },
+    {
+      "path": "docs/qa-images/atelier-gloves-desktop.png",
+      "sha256": "7ed49e2f03ccb46455300b1a45ad8437850fcf5259ffec4e2621fffe80c231d3",
+      "bytes": 575706
+    },
+    {
+      "path": "docs/qa-images/atelier-socks-desktop.png",
+      "sha256": "04cb5bb490ee742606b3adaceb6f25ccefa421b1722bc2dcf3a80efa56231bb6",
+      "bytes": 599730
+    },
+    {
+      "path": "docs/qa-images/atelier-sweater-desktop.png",
+      "sha256": "9fc875c09b894f44ba16a68a947db873bc8e4139cbb5debdbefc645dfc27833d",
+      "bytes": 754444
+    },
+    {
+      "path": "docs/qa-images/atelier-sweater-mobile.png",
+      "sha256": "bd9bebea5010a4bf0876b7820bf2933034c94700c029bf9ec213f26d13f095a7",
+      "bytes": 331019
+    },
+    {
+      "path": "index.html",
+      "sha256": "e51d26eb8a3f8e81ede5400509d0ff7d1c9cc47d3b88239c151db760c2d39f97",
+      "bytes": 128529
+    },
+    {
+      "path": "original/previews/01-custom-full.png",
+      "sha256": "23f41dc9f860cbf5c2455cd7a1f5baaebfc5da21868b32039b395c64fefa7b1a",
+      "bytes": 234607
+    },
+    {
+      "path": "original/previews/02-scarf-standard.png",
+      "sha256": "31f520424f757022d69d9821607a42efd2e087fdb534f35b741c41ab8a90c5c5",
+      "bytes": 237972
+    },
+    {
+      "path": "original/previews/03-blanket-throw.png",
+      "sha256": "8ff98b41ee51971eb98b7009fac3e6f0f5bd8f788bc818f20512ded5a4e636b0",
+      "bytes": 284346
+    },
+    {
+      "path": "original/previews/04-beanie-adult-m.png",
+      "sha256": "651cea540eefb50f1a46c0905a8d7f4d5baf83ee28ad33fd777187176ccab689",
+      "bytes": 243389
+    },
+    {
+      "path": "original/previews/05-shirt-adult-m.png",
+      "sha256": "4bb8f46a63cf9c74e630c40885e1361b11da9a7bfc00236e60e49fe5a603f96b",
+      "bytes": 280583
+    },
+    {
+      "path": "original/previews/06-sweater-adult-m.png",
+      "sha256": "19f0d9ec56fc8f5dbbfef8813da41ffcb7d50cb7fc03dbeda8979ba27a2998b1",
+      "bytes": 291059
+    },
+    {
+      "path": "original/previews/07-socks-adult-m.png",
+      "sha256": "54c3220489809c1eea86a47c1c4049898c5d541cb1652b270be1ed51d839157d",
+      "bytes": 228484
+    },
+    {
+      "path": "original/previews/08-gloves-adult-m.png",
+      "sha256": "3422e99513b99316e1e20efcc058cc0d7543ff9eb22e93ee1fe28a133ecf0a22",
+      "bytes": 245208
+    },
+    {
+      "path": "original/previews/09-2d-5x5-closeup.png",
+      "sha256": "760a3cd4850ddfda6f46bdc13bb0a75d32116a3676354b452500356023ac7f52",
+      "bytes": 228981
+    },
+    {
+      "path": "original/previews/10-rendered-5x5-closeup.png",
+      "sha256": "3b1c6039058faa79db9450c60869dd429447f0a1156d33fff7a6cf1081ae8119",
+      "bytes": 77732
+    },
+    {
+      "path": "original/previews/11-beanie-loupe.png",
+      "sha256": "a37a85c06cfd7fba75d43bfc548893138ca89c18faa3010200faa12c3343a239",
+      "bytes": 88546
+    },
+    {
+      "path": "original/stitch-studio.html",
+      "sha256": "1a6d4d046e22f790c67e4792c1178fd47fe91e803ce3b64c2439b6231eeb3b93",
+      "bytes": 119335
+    },
+    {
+      "path": "src/scaffold/body-model.js",
+      "sha256": "9eb2559ffe51807d1d4771a1d86af5800a98699d176f09e9fb174d70c5d24eb1",
+      "bytes": 1082
+    },
+    {
+      "path": "src/scaffold/bridge.js",
+      "sha256": "76d1fdc1efb51c7a1b1e90bb3967cf0063ed4247c70a027129082ae77827c012",
+      "bytes": 1032
+    },
+    {
+      "path": "src/scaffold/chart-renderer.js",
+      "sha256": "88c7eaf26ea4b492bb9cec60bb26a5d0311d89e32002d6d6c3c62b5a75139962",
+      "bytes": 928
+    },
+    {
+      "path": "src/scaffold/construction-timeline.js",
+      "sha256": "6b61ddddc3fa70361d08a90fdd2dafde6d5297256a06770d50b2de8d21f0a7d7",
+      "bytes": 1180
+    },
+    {
+      "path": "src/scaffold/exporter.js",
+      "sha256": "fce87f096218e72be7b2c6c3d99993aae1b22b232ed6f9dcadb5487001ff8ae0",
+      "bytes": 982
+    },
+    {
+      "path": "src/scaffold/fabric-renderer.js",
+      "sha256": "139872ab8f375283eb0de8889da127f49ec8bc0b790ff0f4296e407ea62d8099",
+      "bytes": 15738
+    },
+    {
+      "path": "src/scaffold/garment-3d.js",
+      "sha256": "b86317540ca9249b7640996aa8f7c0383cbc95ce53b4c772ee7f49936e2fd217",
+      "bytes": 1096
+    },
+    {
+      "path": "src/scaffold/garment-geometry.js",
+      "sha256": "5fc9c6d85a985c0cfea8662b811c8938c0a4bd28cccb52566e0937ad8e39ed5b",
+      "bytes": 12640
+    },
+    {
+      "path": "src/scaffold/inspection.js",
+      "sha256": "02258222254a70597e3675a7de75a87cca56f87930922942dba98e5ac5ba15f6",
+      "bytes": 1498
+    },
+    {
+      "path": "src/scaffold/plan-adapter.js",
+      "sha256": "9ef709f151b99d9b0a2486a1a001e3c26e2a9e55720210d22f60b08116c07342",
+      "bytes": 5226
+    },
+    {
+      "path": "src/scaffold/registry.js",
+      "sha256": "c04799f2fa1570c1a8ec31a1c2241347a17fd57383a8e4bd6af6a8cd8349c546",
+      "bytes": 751
+    },
+    {
+      "path": "src/scaffold/section-overlay.js",
+      "sha256": "8c1f9e3322f448f05cbc306f0ee308aaf7fd3a3bce0337c67effec9b9cbe39ec",
+      "bytes": 664
+    },
+    {
+      "path": "src/scaffold/studio-view.js",
+      "sha256": "907d51b10b92d37dd5ea9c5fed22d1cd5c6b080b784be0a33e7d1e4529d3efc8",
+      "bytes": 12834
+    },
+    {
+      "path": "src/scaffold/studio.css",
+      "sha256": "dd4994444e5fae7df62992a927475c680909a3c7324114f171987b58ea5534e1",
+      "bytes": 8944
+    },
+    {
+      "path": "test_smoke.py",
+      "sha256": "8367be5bd854c27ef4e6bcc753a3fac0dcebdc152667079e6bf05bb1372a1322",
+      "bytes": 1942
+    },
+    {
+      "path": "tests/browser_smoke.py",
+      "sha256": "aee4b0cf9fc05e0438f56750dfdc7c7ba3c1f2e77fac3a461653c23f3abb1d3e",
+      "bytes": 5753
+    },
+    {
+      "path": "tests/build_release.py",
+      "sha256": "e560456e4faf36fb519d4430beb460337a2914732052c3091af3de78c052045a",
+      "bytes": 1999
+    },
+    {
+      "path": "tests/regression.py",
+      "sha256": "c1abde35835016cf77928267ff712c6b71fb5127126f341c7aeca4060f2db80e",
+      "bytes": 1916
+    }
+  ]
+}

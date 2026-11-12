@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="Shirt flat illustration (non-scaled)">
+<title>Shirt flat reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M70 31L40 47L18 77L40 90L64 68L64 139L136 139L136 68L160 90L182 77L160 47L130 31L117 39Q100 59 83 39Z"/><path d="M64 128h72M34 81l11 -12M155 69l11 12" stroke-width="2" fill="none"/></g>
+</svg>

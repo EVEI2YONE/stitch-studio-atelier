@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160" role="img" aria-label="loupe UI reference illustration (non-scaled)">
+<title>loupe UI reference reference illustration - not pattern geometry</title>
+<rect width="200" height="160" rx="15" fill="#f8f4ed"/>
+<g fill="#e9efe3" stroke="#536b52" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="84" cy="68" r="38"/><path d="M112 98L155 140" stroke-width="15"/><path d="M63 67L78 84L105 51" stroke-width="3" fill="none"/></g>
+</svg>
